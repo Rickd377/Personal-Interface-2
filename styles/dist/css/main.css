@@ -1,0 +1,110 @@
+@import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
+[data-theme=white] {
+  --background: hsl(0, 0%, 90%);
+  --primary: hsl(from hsl(0, 0%, 90%) h s calc(l - 10));
+  --border: hsl(from hsl(0, 0%, 90%) h s calc(l - 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+[data-theme=black] {
+  --background: hsl(0, 0%, 10%);
+  --primary: hsl(from hsl(0, 0%, 10%) h s calc(l + 10));
+  --border: hsl(from hsl(0, 0%, 10%) h s calc(l + 15));
+  --text: hsl(0, 0%, 90%);
+}
+
+[data-theme=red] {
+  --background: hsl(0, 70%, 60%);
+  --primary: hsl(from hsl(0, 70%, 60%) h s calc(l + 10));
+  --border: hsl(from hsl(0, 70%, 60%) h s calc(l + 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+[data-theme=orange] {
+  --background: hsl(25, 80%, 60%);
+  --primary: hsl(from hsl(25, 80%, 60%) h s calc(l + 10));
+  --border: hsl(from hsl(25, 80%, 60%) h s calc(l + 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+[data-theme=yellow] {
+  --background: hsl(40, 70%, 60%);
+  --primary: hsl(from hsl(40, 70%, 60%) h s calc(l + 10));
+  --border: hsl(from hsl(40, 70%, 60%) h s calc(l + 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+[data-theme=green] {
+  --background: hsl(130, 40%, 50%);
+  --primary: hsl(from hsl(130, 40%, 50%) h s calc(l + 10));
+  --border: hsl(from hsl(130, 40%, 50%) h s calc(l + 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+[data-theme=blue] {
+  --background: hsl(200, 70%, 60%);
+  --primary: hsl(from hsl(200, 70%, 60%) h s calc(l + 10));
+  --border: hsl(from hsl(200, 70%, 60%) h s calc(l + 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+[data-theme=purple] {
+  --background: hsl(245, 50%, 60%);
+  --primary: hsl(from hsl(245, 50%, 60%) h s calc(l + 10));
+  --border: hsl(from hsl(245, 50%, 60%) h s calc(l + 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+[data-theme=pink] {
+  --background: hsl(300, 35%, 60%);
+  --primary: hsl(from hsl(300, 35%, 60%) h s calc(l + 10));
+  --border: hsl(from hsl(300, 35%, 60%) h s calc(l + 15));
+  --text: hsl(0, 0%, 10%);
+}
+
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  line-height: 1;
+  min-height: 100dvh;
+  background-color: var(--background);
+  font-family: "Inter", sans-serif;
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+}
+body main {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+body ul, body ol {
+  list-style: none;
+}
+body a {
+  text-decoration: none;
+  color: inherit;
+}
+body img {
+  vertical-align: middle;
+  max-width: 100%;
+  height: auto;
+  font-style: italic;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-shape-margin: 1rem;
+}
+
+.container {
+  background: var(--primary);
+  width: 90%;
+  height: 90vh;
+  border: 5px solid var(--border);
+  border-radius: 1rem;
+}/*# sourceMappingURL=main.css.map */

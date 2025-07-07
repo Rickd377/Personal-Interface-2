@@ -1,0 +1,16 @@
+$breakpoints: (
+  "mobile": 426px,
+  "tablet": 769px,
+  "laptop": 1025px
+) !default;
+
+@mixin responsive($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (max-width: map-get($breakpoints, $breakpoint)) {
+      @content;
+    }
+  }
+  @else {
+    @warn "Incorrect breakpoint" + "available breakpoints are #{map-keys($breakpoints)}";
+  }
+}
