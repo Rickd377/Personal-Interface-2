@@ -121,9 +121,12 @@
     grid-area: 2 / 2 / 2 / 2;
 
     @include flex;
-    font-size: clamp(2rem, 1.615rem + 1.538vw, 3rem);
-    letter-spacing: 5px;
-    font-weight: 700;
+
+    span {
+      font-size: clamp(2rem, 1.615rem + 1.538vw, 3rem);
+      letter-spacing: 5px;
+      font-weight: 700;
+    }
   }
   
   .weather {
