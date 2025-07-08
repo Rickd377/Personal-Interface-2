@@ -12,7 +12,7 @@
   --subcontainer: hsl(from hsl(0, 70%, 60%) h s calc(l + 5));
   --primary: hsl(from hsl(0, 70%, 60%) h s calc(l + 10));
   --border: hsl(from hsl(0, 70%, 60%) h s calc(l + 15));
-  --text: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 90%);
 }
 
 [data-theme=orange] {
@@ -20,7 +20,7 @@
   --subcontainer: hsl(from hsl(25, 80%, 60%) h s calc(l + 5));
   --primary: hsl(from hsl(25, 80%, 60%) h s calc(l + 10));
   --border: hsl(from hsl(25, 80%, 60%) h s calc(l + 15));
-  --text: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 90%);
 }
 
 [data-theme=yellow] {
@@ -28,7 +28,7 @@
   --subcontainer: hsl(from hsl(40, 70%, 60%) h s calc(l + 5));
   --primary: hsl(from hsl(40, 70%, 60%) h s calc(l + 10));
   --border: hsl(from hsl(40, 70%, 60%) h s calc(l + 15));
-  --text: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 90%);
 }
 
 [data-theme=green] {
@@ -36,7 +36,7 @@
   --subcontainer: hsl(from hsl(130, 40%, 50%) h s calc(l + 5));
   --primary: hsl(from hsl(130, 40%, 50%) h s calc(l + 10));
   --border: hsl(from hsl(130, 40%, 50%) h s calc(l + 15));
-  --text: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 90%);
 }
 
 [data-theme=blue] {
@@ -44,7 +44,7 @@
   --subcontainer: hsl(from hsl(200, 70%, 60%) h s calc(l + 5));
   --primary: hsl(from hsl(200, 70%, 60%) h s calc(l + 10));
   --border: hsl(from hsl(200, 70%, 60%) h s calc(l + 15));
-  --text: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 90%);
 }
 
 [data-theme=purple] {
@@ -52,7 +52,7 @@
   --subcontainer: hsl(from hsl(245, 50%, 60%) h s calc(l + 5));
   --primary: hsl(from hsl(245, 50%, 60%) h s calc(l + 10));
   --border: hsl(from hsl(245, 50%, 60%) h s calc(l + 15));
-  --text: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 90%);
 }
 
 [data-theme=pink] {
@@ -60,7 +60,7 @@
   --subcontainer: hsl(from hsl(300, 35%, 60%) h s calc(l + 5));
   --primary: hsl(from hsl(300, 35%, 60%) h s calc(l + 10));
   --border: hsl(from hsl(300, 35%, 60%) h s calc(l + 15));
-  --text: hsl(0, 0%, 10%);
+  --text: hsl(0, 0%, 90%);
 }
 
 *, *::before, *::after {
@@ -108,10 +108,21 @@ body img {
   width: 100%;
   flex: 1;
   border: 5px solid var(--border);
-  border-radius: 1rem;
+  border-radius: 3rem;
   padding: 1rem;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-template-rows: auto auto 1fr;
+  gap: 1rem;
+}
+.container > * {
+  border-radius: 2rem;
+  border: 2px solid var(--border);
+  background: var(--subcontainer);
 }
 .container .theme-picker {
+  grid-column: 1;
+  grid-row: 1;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -119,9 +130,6 @@ body img {
   gap: 0.5rem;
   width: -moz-fit-content;
   width: fit-content;
-  background: var(--subcontainer);
-  border: 2px solid var(--border);
-  border-radius: 99rem;
   padding: 0.5rem;
 }
 .container .theme-picker > * {
@@ -160,4 +168,72 @@ body img {
 }
 .container .theme-picker > *:checked {
   transform: scale(1.15);
+}
+.container .timer {
+  grid-column: 1;
+  grid-row: 2;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+.container .timer .time {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  font-size: 2rem;
+  font-weight: 700;
+}
+.container .timer .time .tempInput {
+  font-size: 2rem;
+  font-weight: 700;
+  background: none;
+  border: none;
+  outline: none;
+  width: 2ch;
+  height: 1em;
+  color: var(--color);
+  font-family: "Inter", sans-serif;
+  -moz-appearance: textfield;
+  -webkit-appearance: textfield;
+          appearance: textfield;
+}
+.container .timer .time .tempInput::-webkit-outer-spin-button, .container .timer .time .tempInput::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  appearance: none;
+  margin: 0;
+}
+.container .timer .btns {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+  width: 100%;
+}
+.container .timer .btns .button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 0.5rem;
+  flex: 1;
+  padding-block: 0.6rem;
+  background: var(--primary);
+  border-radius: 2rem;
+  border: 1px solid var(--border);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: pointer;
+}
+.container .timer .btns .button.start-stop {
+  background: var(--background);
+}
+.container .timer .btns .button i {
+  font-size: 0.8rem;
 }/*# sourceMappingURL=main.css.map */

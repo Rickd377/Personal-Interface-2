@@ -1,6 +1,6 @@
 const radios = document.querySelectorAll('.theme-picker input[type="radio"]');
 const html = document.documentElement;
-let current = localStorage.getItem('theme') || 'white';
+let current = localStorage.getItem('theme') || 'black';
 
 html.dataset.theme = current;
 radios.forEach(radio => {
