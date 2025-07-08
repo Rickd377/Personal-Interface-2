@@ -23,13 +23,9 @@
       cursor: pointer;
       border: 1px solid rgba($white, .5);
 
-      &.white {
-        border: 1px solid rgba($black, .5);
-      }
-
       @each $theme, $map in $themes {
         &.#{$theme} {
-          background: map-get($map, background);
+          background: linear-gradient(-45deg, map-get($map, background) 50%, map-get($map, subcontainer) 50%);
         }
       }
 

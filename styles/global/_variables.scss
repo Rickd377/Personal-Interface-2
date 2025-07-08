@@ -6,13 +6,6 @@ $lexend: 'Lexend', sans-serif;
 $inter: 'Inter', sans-serif;
 
 $themes: (
-  white: (
-    background: hsl(0, 0%, 90%),
-    subcontainer: hsl(from hsl(0, 0%, 90%) h s calc(l - 5)),
-    primary: hsl(from hsl(0, 0%, 90%) h s calc(l - 10)),
-    border: hsl(from hsl(0, 0%, 90%) h s calc(l - 15)),
-    text: hsl(0, 0%, 10%),
-  ),
   black: (
     background: hsl(0, 0%, 10%),
     subcontainer: hsl(from hsl(0, 0%, 10%) h s calc(l + 5)),

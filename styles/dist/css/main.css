@@ -1,12 +1,4 @@
 @import url("https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Lexend:wght@100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Oswald:wght@200..700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap");
-[data-theme=white] {
-  --background: hsl(0, 0%, 90%);
-  --subcontainer: hsl(from hsl(0, 0%, 90%) h s calc(l - 5));
-  --primary: hsl(from hsl(0, 0%, 90%) h s calc(l - 10));
-  --border: hsl(from hsl(0, 0%, 90%) h s calc(l - 15));
-  --text: hsl(0, 0%, 10%);
-}
-
 [data-theme=black] {
   --background: hsl(0, 0%, 10%);
   --subcontainer: hsl(from hsl(0, 0%, 10%) h s calc(l + 5));
@@ -142,35 +134,29 @@ body img {
   cursor: pointer;
   border: 1px solid rgba(250, 250, 250, 0.5);
 }
-.container .theme-picker > *.white {
-  border: 1px solid rgba(41, 41, 41, 0.5);
-}
-.container .theme-picker > *.white {
-  background: hsl(0, 0%, 90%);
-}
 .container .theme-picker > *.black {
-  background: hsl(0, 0%, 10%);
+  background: linear-gradient(-45deg, hsl(0, 0%, 10%) 50%, hsl(from hsl(0, 0%, 10%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *.red {
-  background: hsl(0, 70%, 60%);
+  background: linear-gradient(-45deg, hsl(0, 70%, 60%) 50%, hsl(from hsl(0, 70%, 60%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *.orange {
-  background: hsl(25, 80%, 60%);
+  background: linear-gradient(-45deg, hsl(25, 80%, 60%) 50%, hsl(from hsl(25, 80%, 60%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *.yellow {
-  background: hsl(40, 70%, 60%);
+  background: linear-gradient(-45deg, hsl(40, 70%, 60%) 50%, hsl(from hsl(40, 70%, 60%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *.green {
-  background: hsl(130, 40%, 50%);
+  background: linear-gradient(-45deg, hsl(130, 40%, 50%) 50%, hsl(from hsl(130, 40%, 50%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *.blue {
-  background: hsl(200, 70%, 60%);
+  background: linear-gradient(-45deg, hsl(200, 70%, 60%) 50%, hsl(from hsl(200, 70%, 60%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *.purple {
-  background: hsl(245, 50%, 60%);
+  background: linear-gradient(-45deg, hsl(245, 50%, 60%) 50%, hsl(from hsl(245, 50%, 60%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *.pink {
-  background: hsl(300, 35%, 60%);
+  background: linear-gradient(-45deg, hsl(300, 35%, 60%) 50%, hsl(from hsl(300, 35%, 60%) h s calc(l + 5)) 50%);
 }
 .container .theme-picker > *:checked {
   transform: scale(1.15);
