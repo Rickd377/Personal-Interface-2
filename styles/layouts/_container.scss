@@ -68,7 +68,7 @@
         border: none;
         outline: none;
         width: 2ch;
-        height: 1em;
+        height: calc(1em + -1px);
         color: var(--color);
         font-family: $inter;
         -moz-appearance: textfield;

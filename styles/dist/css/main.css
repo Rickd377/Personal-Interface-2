@@ -195,7 +195,7 @@ body img {
   border: none;
   outline: none;
   width: 2ch;
-  height: 1em;
+  height: calc(1em - 1px);
   color: var(--color);
   font-family: "Inter", sans-serif;
   -moz-appearance: textfield;

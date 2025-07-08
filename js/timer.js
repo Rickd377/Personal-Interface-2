@@ -84,6 +84,12 @@ function startTimer() {
       clearInterval(timerInterval);
       timerInterval = null;
       timerState = "stopped";
+      const icon = document.querySelector(".start-stop i");
+      const span = document.querySelector(".start-stop span");
+      setTimeout(() => {
+        icon.className = "fa-sharp fa-solid fa-play";
+        span.innerText = "Start";
+      }, 1000);
     }
   }, 1000);
 }
@@ -111,6 +117,12 @@ function resetTimer() {
 document.querySelector(".start-stop").addEventListener('click', () => {
   const icon = document.querySelector(".start-stop i");
   const span = document.querySelector(".start-stop span");
+  if (timerState !== "running" &&
+    currentTime.hours === 0 &&
+    currentTime.minutes === 0 &&
+    currentTime.seconds === 0) {
+      return;
+  }
   if (timerState === "running") {
     pauseTimer();
     icon.className = "fa-sharp fa-solid fa-play";
