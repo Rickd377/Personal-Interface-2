@@ -1,7 +1,41 @@
 .container {
   background: var(--primary);
-  width: 90%;
-  height: 90vh;
+  width: 100%;
+  flex: 1;
   border: 5px solid var(--border);
   border-radius: 1rem;
+  padding: 1rem;
+
+  .theme-picker {
+    @include flex;
+    gap: .5rem;
+    width: fit-content;
+    background: var(--subcontainer);
+    border: 2px solid var(--border);
+    border-radius: 99rem;
+    padding: .5rem;
+
+    & > * {
+      appearance: none;
+      width: 1.5rem;
+      aspect-ratio: 1;
+      border-radius: 50%;
+      cursor: pointer;
+      border: 1px solid rgba($white, .5);
+
+      &.white {
+        border: 1px solid rgba($black, .5);
+      }
+
+      @each $theme, $map in $themes {
+        &.#{$theme} {
+          background: map-get($map, background);
+        }
+      }
+
+      &:checked {
+        transform: scale(1.15);
+      }
+    }
+  }
 }

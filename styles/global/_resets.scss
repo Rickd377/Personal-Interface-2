@@ -15,7 +15,8 @@ body {
 
   main {
     flex: 1;
-    @include flex;
+    @include flex($direction: column);
+    padding: 5%;
   }
 
   ul, ol {

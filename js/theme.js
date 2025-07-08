@@ -1,11 +1,14 @@
-const select = document.getElementById('theme-select');
+const radios = document.querySelectorAll('.theme-picker input[type="radio"]');
 const html = document.documentElement;
 let current = localStorage.getItem('theme') || 'white';
-html.dataset.theme = current;
-select.value = current;
 
-select.addEventListener('change', e => {
-  current = e.target.value;
-  html.dataset.theme = current;
-  localStorage.setItem('theme', current);
+html.dataset.theme = current;
+radios.forEach(radio => {
+  radio.checked = radio.value === current;
+  radio.addEventListener('change', e => {
+    if (e.target.checked) {
+      html.dataset.theme = e.target.value;
+      localStorage.setItem('theme', e.target.value);
+    }
+  });
 });
