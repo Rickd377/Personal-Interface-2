@@ -8,7 +8,7 @@
   border-radius: calc($_padding + $_inner-radius);
   padding: $_padding;
   display: grid;
-  grid-template-columns: auto 1fr 1fr 1fr;
+  grid-template-columns: auto 1fr .5fr .5fr 1fr;
   grid-template-rows: auto auto 1fr 1fr;
   gap: $_padding;
 
@@ -115,6 +115,11 @@
 
     @include flex;
     font-style: italic;
+
+    span {
+      padding-inline: 1rem;
+      white-space: nowrap;
+    }
   }
 
   .clock {
@@ -150,7 +155,7 @@
         color: var(--text);
 
         &::placeholder {
-          color: var(--text);
+          color: var(--border);
         }
       }
 
@@ -161,6 +166,7 @@
         transform: translateY(-50%);
         font-size: .8rem;
         pointer-events: none;
+        color: var(--border);
       }
     }
 
@@ -180,13 +186,14 @@
   }
 
   .notes {
-    grid-area: 1 / 3 / 1 / 3;
+    grid-area: 1 / 3 / 1 / 5;
     @include flex;
 
     .notes-btn {
       @include flex;
       gap: .5rem;
       border-radius: 50%;
+      padding-inline: 1rem;
       height: 100%;
       width: 100%;
       cursor: pointer;
@@ -201,14 +208,14 @@
       }
 
       span {
-        font-size: 1.3em;
+        font-size: 1.2em;
         font-weight: 600;
       }
     }
   }
 
   .notes-container {
-    grid-area: 2 / 3 / 5 / 5;
+    grid-area: 2 / 3 / 5 / 6;
     display: none;
     overflow: hidden;
     border-color: var(--text);

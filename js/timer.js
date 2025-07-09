@@ -2,6 +2,8 @@ const timeFields = ["hours", "minutes", "seconds"];
 const timeDivs = {};
 let timerInterval = null;
 let timerState = "stopped";
+let mode = "timer"
+let resetToZeroNext = false
 let initialTime = { hours: 0, minutes: 0, seconds: 0 };
 let currentTime = { hours: 0, minutes: 0, seconds: 0 };
 
@@ -73,73 +75,100 @@ timeFields.forEach(className => {
   });
 });
 
-function startTimer() {
+function startTimerOrStopwatch () {
   if (timerInterval) return;
   timerState = "running";
-  timerInterval = setInterval(() => {
-    let ms = getTotalMs(currentTime) - 1000;
-    setTimeFromMs(ms);
-    updateDisplay();
-    if (ms <= 0) {
-      clearInterval(timerInterval);
-      timerInterval = null;
-      timerState = "stopped";
-      const icon = document.querySelector(".start-stop i");
-      const span = document.querySelector(".start-stop span");
-      setTimeout(() => {
+  if (mode === "timer") {
+    timerInterval = setInterval(() => {
+      let ms = getTotalMs(currentTime) - 1000;
+      setTimeFromMs(ms);
+      updateDisplay();
+      if (ms <= 0) {
+        clearInterval(timerInterval);
+        timerInterval = null;
+        timerState = "stopped";
+        const icon = document.querySelector(".start-stop i");
+        const span = document.querySelector(".start-stop span");
         icon.className = "fa-sharp fa-solid fa-play";
-        span.innerText = "Start";
-      }, 1000);
-    }
-  }, 1000);
+        span.innerText = "Start"
+      }
+    }, 1000);
+  } else if (mode === "stopwatch") {
+    timerInterval = setInterval(() => {
+      let ms = getTotalMs(currentTime) + 1000;
+      setTimeFromMs(ms);
+      updateDisplay();
+    }, 1000);
+  }
 }
 
-function pauseTimer() {
+function pauseTimerOrStopwatch() {
   timerState = "paused";
   clearInterval(timerInterval);
   timerInterval = null;
 }
 
-function resetTimer() {
+function resetTimerOrStopwatch() {
   clearInterval(timerInterval);
   timerInterval = null;
-  if (timerState === "running") {
-    currentTime = { ...initialTime };
-    timerState = "stopped";
+  timerState = "stopped";
+  if (mode === "timer") {
+    if (
+      currentTime.hours === initialTime.hours &&
+      currentTime.minutes === initialTime.minutes &&
+      currentTime.seconds === initialTime.seconds &&
+      (initialTime.hours !== 0 || initialTime.minutes !== 0 || initialTime.seconds !== 0) &&
+      resetToZeroNext
+    ) {
+      currentTime = { hours: 0, minutes: 0, seconds: 0 };
+      initialTime = { hours: 0, minutes: 0, seconds: 0 };
+      resetToZeroNext = false;
+    } else {
+      currentTime = { ...initialTime };
+      resetToZeroNext = true;
+    }
   } else {
     currentTime = { hours: 0, minutes: 0, seconds: 0 };
-    initialTime = { hours: 0, minutes: 0, seconds: 0 };
-    timerState = "stopped";
+    resetToZeroNext = false;
   }
   updateDisplay();
 }
 
-document.querySelector(".start-stop").addEventListener('click', () => {
+document.querySelector(".start-stop").addEventListener("click", () => {
   const icon = document.querySelector(".start-stop i");
   const span = document.querySelector(".start-stop span");
-  if (timerState !== "running" &&
+
+  if (
+    timerState !== "running" &&
     currentTime.hours === 0 &&
     currentTime.minutes === 0 &&
-    currentTime.seconds === 0) {
-      return;
+    currentTime.seconds === 0
+  ) {
+    mode = "stopwatch";
+  } else if (
+    timerState !== "running" &&
+    (initialTime.hours !== 0 || initialTime.minutes !== 0 || initialTime.seconds !== 0)
+  ) {
+    mode = "timer";
   }
   if (timerState === "running") {
-    pauseTimer();
+    pauseTimerOrStopwatch();
     icon.className = "fa-sharp fa-solid fa-play";
-    span.innerText = "Start";
+    span.innerText = "Start"
   } else {
-    startTimer();
+    startTimerOrStopwatch();
     icon.className = "fa-sharp fa-solid fa-pause";
     span.innerText = "Pause";
   }
 });
 
-document.querySelector(".reset").addEventListener('click', () => {
-  resetTimer();
+document.querySelector(".reset").addEventListener("click", () => {
+  resetTimerOrStopwatch();
   const icon = document.querySelector(".start-stop i");
   const span = document.querySelector(".start-stop span");
   icon.className = "fa-sharp fa-solid fa-play";
   span.innerText = "Start";
+  mode = "timer";
 });
 
 window.addEventListener("DOMContentLoaded", () => {
@@ -148,5 +177,5 @@ window.addEventListener("DOMContentLoaded", () => {
     currentTime[field] = val;
     initialTime[field] = val;
   });
-  updateDisplay();
+  updateDisplay()
 });
