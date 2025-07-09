@@ -1,5 +1,5 @@
-function displayCurrentTime(divSelector) {
-  const clockDiv = document.querySelector(divSelector);
+function displayCurrentTime() {
+  const clockDiv = document.querySelector(".clock");
   if (!clockDiv) return;
 
   let timeSpan = clockDiv.querySelector("span");
@@ -19,4 +19,4 @@ function displayCurrentTime(divSelector) {
   setInterval(updateTime, 1000);
 }
 
-displayCurrentTime('.clock');
+displayCurrentTime();

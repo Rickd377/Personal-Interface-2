@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -14,11 +15,14 @@
   <link rel="stylesheet" href="https://site-assets.fontawesome.com/releases/v6.7.2/css/sharp-light.css">
 
   <link rel="stylesheet" href="./styles/dist/css/main.css">
+  <link rel="icon" href="./assets/dark-mode-icon.ico" media="(prefers-color-scheme: dark)">
+  <link rel="icon" href="./assets/light-mode-icon.ico" media="(prefers-color-scheme: light)">
 
   <title>Personal Interface</title>
 </head>
+
 <body>
-  
+
   <main>
     <div class="container">
       <div class="theme-picker">
@@ -59,16 +63,27 @@
         </div>
         <div class="main-weather">
           <div class="current-weather">
-            
+
           </div>
         </div>
       </div>
+      <div class="notes">
+        <div class="notes-btn">
+          <span>Notes</span>
+          <i class="fa-sharp fa-solid fa-pencil"></i>
+        </div>
+      </div>
+      <div class="notes-container">
+        <textarea name="notes" id="notes" spellcheck="false"></textarea>
+      </div>
     </div>
   </main>
-  
+
   <script src="./js/theme.js"></script>
   <script src="./js/timer.js"></script>
   <script src="./js/clock.js"></script>
   <script src="./js/date.js"></script>
+  <script src="./js/notes.js"></script>
 </body>
+
 </html>
