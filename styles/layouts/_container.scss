@@ -220,6 +220,14 @@
     overflow: hidden;
     border-color: var(--text);
 
+    &.saved {
+      border-color: var(--border);
+    }
+
+    &.unsaved {
+      border-color: var(--text);
+    }
+
     &.open {
       display: flex;
       z-index: 99;
@@ -234,6 +242,8 @@
         font-family: $inter;
         font-size: 1rem;
         padding: 1rem;
+        cursor: text;
+        caret-color: var(--text);
         
         &::-webkit-scrollbar {
           width: 12px;
