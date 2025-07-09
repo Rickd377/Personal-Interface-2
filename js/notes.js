@@ -37,8 +37,12 @@ const themeObserver = new MutationObserver(() => {
 themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["style", "class"] });
 
 document.querySelector(".notes-btn").addEventListener("click", () => {
+  const icon = document.querySelector(".notes-btn i");
   notesContainer.classList.toggle("open");
   if (notesContainer.classList.contains("open")) {
     updateNotesBorderColor();
+    icon.style.rotate = "180deg";
+  } else {
+    icon.style.rotate = "0deg";
   }
 });
