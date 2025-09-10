@@ -32,7 +32,7 @@
       width: 1.5rem;
       aspect-ratio: 1;
       border-radius: 50%;
-      cursor: pointer;
+      cursor: $pointercursor;
       border: 1px solid rgba($white, .5);
 
       @each $theme, $map in $themes {
@@ -60,6 +60,12 @@
       gap: .5rem;
       font-size: 2rem;
       font-weight: 700;
+
+      .hours,
+      .minutes,
+      .seconds {
+        cursor: $textcursor;
+      }
 
       .tempInput {
         font-size: 2rem;
@@ -97,7 +103,11 @@
         border-radius: 2rem;
         border: 1px solid var(--border);
         user-select: none;
-        cursor: pointer;
+        cursor: $pointercursor;
+
+        & > * {
+          pointer-events: none;
+        }
 
         &.start-stop {
           background: var(--background);
@@ -149,10 +159,11 @@
         border-radius: 1rem;
         background: var(--background);
         border: 1px solid var(--border);
-        padding: .4rem .6rem;
+        padding: .4rem 1.7rem .4rem .6rem;
         font-family: $inter;
         outline: none;
         color: var(--text);
+        cursor: $textcursor;
 
         &::placeholder {
           color: var(--border);
@@ -165,8 +176,8 @@
         top: 50%;
         transform: translateY(-50%);
         font-size: .8rem;
-        pointer-events: none;
         color: var(--border);
+        cursor: $pointercursor;
       }
     }
 
@@ -196,7 +207,11 @@
       padding-inline: 1rem;
       height: 100%;
       width: 100%;
-      cursor: pointer;
+      cursor: $pointercursor;
+
+      & > * {
+        pointer-events: none;
+      }
 
       svg {
         width: 1.5em;
@@ -237,7 +252,7 @@
         font-family: $inter;
         font-size: 1rem;
         padding: 1rem;
-        cursor: text;
+        cursor: $textcursor;
         caret-color: var(--text);
         
         &::-webkit-scrollbar {
@@ -248,11 +263,7 @@
           background: var(--border);
           border: 3.5px solid var(--background);
           border-radius: .5rem;
-          cursor: grab;
-
-          &:active {
-            cursor: grabbing;
-          }
+          cursor: $grabcursor;
         }
 
         &::-webkit-scrollbar-track {

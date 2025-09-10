@@ -69,6 +69,10 @@
   box-sizing: border-box;
 }
 
+* {
+  cursor: url("/assets/cursor-default.cur"), auto !important;
+}
+
 body {
   line-height: 1;
   min-height: 100dvh;
@@ -139,8 +143,8 @@ body img {
   width: 1.5rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  cursor: pointer;
-  border: 1px solid rgba(250, 250, 250, 0.5);
+  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
+  border: 1px solid rgba(249.9, 249.9, 249.9, 0.5);
 }
 .container .theme-picker > *.black {
   background: linear-gradient(-45deg, hsl(0, 0%, 10%) 50%, hsl(from hsl(0, 0%, 10%) h s calc(l + 5)) 50%);
@@ -188,6 +192,11 @@ body img {
   font-size: 2rem;
   font-weight: 700;
 }
+.container .timer .time .hours,
+.container .timer .time .minutes,
+.container .timer .time .seconds {
+  cursor: url("/assets/cursor-text.cur"), text !important;
+}
 .container .timer .time .tempInput {
   font-size: 2rem;
   font-weight: 700;
@@ -229,7 +238,10 @@ body img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  cursor: pointer;
+  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
+}
+.container .timer .btns .button > * {
+  pointer-events: none;
 }
 .container .timer .btns .button.start-stop {
   background: var(--background);
@@ -279,10 +291,11 @@ body img {
   border-radius: 1rem;
   background: var(--background);
   border: 1px solid var(--border);
-  padding: 0.4rem 0.6rem;
+  padding: 0.4rem 1.7rem 0.4rem 0.6rem;
   font-family: "Inter", sans-serif;
   outline: none;
   color: var(--text);
+  cursor: url("/assets/cursor-text.cur"), text !important;
 }
 .container .weather .search .searchbar::-moz-placeholder {
   color: var(--border);
@@ -296,8 +309,8 @@ body img {
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.8rem;
-  pointer-events: none;
   color: var(--border);
+  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
 }
 .container .weather .main-weather {
   width: 100%;
@@ -331,7 +344,10 @@ body img {
   padding-inline: 1rem;
   height: 100%;
   width: 100%;
-  cursor: pointer;
+  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
+}
+.container .notes .notes-btn > * {
+  pointer-events: none;
 }
 .container .notes .notes-btn svg {
   width: 1.5em;
@@ -366,7 +382,7 @@ body img {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   padding: 1rem;
-  cursor: text;
+  cursor: url("/assets/cursor-text.cur"), text !important;
   caret-color: var(--text);
 }
 .container .notes-container.open textarea::-webkit-scrollbar {
@@ -376,10 +392,7 @@ body img {
   background: var(--border);
   border: 3.5px solid var(--background);
   border-radius: 0.5rem;
-  cursor: grab;
-}
-.container .notes-container.open textarea::-webkit-scrollbar-thumb:active {
-  cursor: grabbing;
+  cursor: url("/assets/cursor-scroll.cur"), grab !important;
 }
 .container .notes-container.open textarea::-webkit-scrollbar-track {
   background: var(--background);

@@ -86,3 +86,9 @@ $themes: (
 $white: hsl(0, 0%, 98%);
 $black: hsl(0, 0%, 16%);
 $gray: hsl(0, 0%, 50%);
+
+// custom cursors
+$defaultcursor: url('/assets/cursor-default.cur'), auto !important;
+$pointercursor: url('/assets/cursor-pointer.cur'), pointer !important;
+$textcursor: url('/assets/cursor-text.cur'), text !important;
+$grabcursor: url('/assets/cursor-scroll.cur'), grab !important;

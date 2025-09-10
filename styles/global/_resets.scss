@@ -4,6 +4,10 @@
   box-sizing: border-box;
 }
 
+* {
+  cursor: $defaultcursor;
+}
+
 body {
   line-height: 1;
   min-height: 100dvh;
