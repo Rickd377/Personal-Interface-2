@@ -26,14 +26,14 @@
   <main>
     <div class="container">
       <div class="theme-picker">
-        <input type="radio" name="color" class="black" value="black">
-        <input type="radio" name="color" class="red" value="red">
-        <input type="radio" name="color" class="orange" value="orange">
-        <input type="radio" name="color" class="yellow" value="yellow">
-        <input type="radio" name="color" class="green" value="green">
-        <input type="radio" name="color" class="blue" value="blue">
-        <input type="radio" name="color" class="purple" value="purple">
-        <input type="radio" name="color" class="pink" value="pink">
+        <input type="radio" name="color" class="black" value="black" aria-label="theme">
+        <input type="radio" name="color" class="red" value="red" aria-label="theme">
+        <input type="radio" name="color" class="orange" value="orange" aria-label="theme">
+        <input type="radio" name="color" class="yellow" value="yellow" aria-label="theme">
+        <input type="radio" name="color" class="green" value="green" aria-label="theme">
+        <input type="radio" name="color" class="blue" value="blue" aria-label="theme">
+        <input type="radio" name="color" class="purple" value="purple" aria-label="theme">
+        <input type="radio" name="color" class="pink" value="pink" aria-label="theme">
       </div>
       <div class="timer">
         <div class="time">
@@ -58,23 +58,24 @@
       <div class="date"></div>
       <div class="weather">
         <div class="search">
-          <input type="text" name="city" id="search" class="searchbar" placeholder="Search for a city..." autocomplete="off">
+          <input type="text" name="city" id="search" class="searchbar" placeholder="Search for a city..." autocomplete="off" spellcheck="off">
           <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
         </div>
         <div class="main-weather">
+          <div class="forecast">
+            forecast
+          </div>
           <div class="current-weather">
-            weather
+            <span class="city"></span>
+            <div class="weather-now">
+              <span class="weather-now-icon"></span>
+              <span class="temperature"></span>
+            </div>
           </div>
         </div>
       </div>
       <div class="notes">
-        <div class="notes-btn">
-          <span>Notes</span>
-          <i class="fa-sharp fa-regular fa-angle-down"></i>
-        </div>
-      </div>
-      <div class="notes-container">
-        <textarea name="notes" id="notes" spellcheck="false"></textarea>
+        <textarea name="notes" id="notes" spellcheck="false" placeholder="Type your notes..."></textarea>
       </div>
       <div class="calculator">
         <div class="result-display">0</div>
@@ -97,11 +98,17 @@
           <div id="addBtn" class="mid-light"><i class="fa-solid fa-plus"></i></div>
           <div id="zeroBtn" class="light">0</div>
           <div id="dotBtn" class="light">.</div>
-          <div id="deleteBtn" class="light"><i class="fa-regular fa-delete-left"></i></div>
+          <div id="deleteBtn" class="light"><i class="fa-regular fa-sharp fa-delete-left"></i></div>
           <div id="equalsBtn" class="dark"><i class="fa-solid fa-equals"></i></div>
         </div>
       </div>
-      <div class="websites">websites</div>
+      <div class="copyright">
+        <span>Copyright © 2025</span>
+      </div>
+      <div class="week">
+      </div>
+      <div class="small">
+      </div>
     </div>
   </main>
 

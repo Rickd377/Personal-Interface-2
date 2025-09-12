@@ -1,8 +1,9 @@
 const notesTextarea = document.querySelector("#notes");
-const notesContainer = document.querySelector(".notes-container");
+const notesContainer = document.querySelector(".notes");
 let saveTimeout;
 
 notesTextarea.value = localStorage.getItem("notes") || "";
+updateNotesBorderColor();
 
 function saveNotes() {
   localStorage.setItem("notes", notesTextarea.value);
@@ -15,11 +16,13 @@ notesTextarea.addEventListener("input", () => {
   saveTimeout = setTimeout(saveNotes, 3000);
 });
 
-notesTextarea.addEventListener("keydown", (e) => {
+document.addEventListener("keydown", (e) => {
   if ((e.ctrlKey || e.metaKey) && e.key.toLowerCase() === "s") {
-    e.preventDefault();
-    clearTimeout(saveTimeout);
-    saveNotes();
+    if (document.activeElement === notesTextarea) {
+      e.preventDefault();
+      clearTimeout(saveTimeout);
+      saveNotes();
+    }
   }
 });
 
@@ -30,19 +33,6 @@ function updateNotesBorderColor() {
 }
 
 const themeObserver = new MutationObserver(() => {
-  if (notesContainer.classList.contains("open")) {
-    updateNotesBorderColor();
-  }
-})
-themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["style", "class"] });
-
-document.querySelector(".notes-btn").addEventListener("click", () => {
-  const icon = document.querySelector(".notes-btn i");
-  notesContainer.classList.toggle("open");
-  if (notesContainer.classList.contains("open")) {
-    updateNotesBorderColor();
-    icon.style.rotate = "180deg";
-  } else {
-    icon.style.rotate = "0deg";
-  }
+  updateNotesBorderColor();
 });
+themeObserver.observe(document.documentElement, { attributes: true, attributeFilter: ["style", "class"] });
