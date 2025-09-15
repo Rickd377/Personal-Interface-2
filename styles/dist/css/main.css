@@ -359,7 +359,7 @@ body img {
 }
 .container .weather .main-weather > * {
   padding: 1rem;
-  border-radius: 1rem;
+  border-radius: calc(23px - 1rem);
   width: 100%;
   background: var(--primary);
   border: 1px solid var(--border);
@@ -477,7 +477,7 @@ body img {
 .container .calculator .result-display {
   background: var(--background);
   padding: 1rem;
-  border-radius: 1rem 1rem 0 0;
+  border-radius: calc(23px - 1rem) calc(23px - 1rem) 0 0;
   text-align: right;
   font-size: 1.2rem;
   font-weight: 600;
@@ -513,7 +513,7 @@ body img {
   width: 100%;
 }
 .container .calculator .buttons-grid > * {
-  border-radius: 1rem;
+  border-radius: calc(23px - 1rem);
   cursor: url("/assets/cursor-pointer.cur"), pointer !important;
   display: flex;
   justify-content: center;
@@ -551,6 +551,9 @@ body img {
   align-items: center;
   flex-direction: row;
   color: var(--text);
+  font-size: 0.9rem;
+  font-weight: 300;
+  opacity: 0.8;
 }
 @media (max-width: 769px) {
   .container .copyright {
@@ -564,6 +567,12 @@ body img {
 }
 .container .week {
   grid-area: 4/2/6/2;
+  padding: 1rem;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 0.5rem;
 }
 @media (max-width: 769px) {
   .container .week {
@@ -574,6 +583,48 @@ body img {
   .container .week {
     grid-area: 6/1/7/1;
   }
+}
+.container .week .current-week {
+  font-weight: 600;
+}
+.container .week .day-display {
+  width: 100%;
+  flex: 1;
+  background: var(--subcontainer);
+  border: 1px solid var(--border);
+  border-radius: calc(23px - 1rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  overflow: hidden;
+  gap: 0.05rem;
+}
+.container .week .day-display .day {
+  flex: 1;
+  height: 100%;
+  border-top: 10px solid var(--border);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  background: var(--primary);
+  padding-block: 0.5rem;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+}
+.container .week .day-display .day.active-day {
+  background: var(--border);
+}
+.container .week .day-display .day .weekdate {
+  font-size: 1.05rem;
+  font-weight: 600;
+}
+.container .week .day-display .day .weekday {
+  opacity: 0.8;
+  font-size: 0.9rem;
+  font-weight: 300;
 }
 .container .small {
   grid-area: 4/1/6/1;
