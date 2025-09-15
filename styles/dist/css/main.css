@@ -328,6 +328,14 @@ body img {
   cursor: url("/assets/cursor-text.cur"), text !important;
   text-transform: capitalize;
 }
+.container .weather .search .searchbar::-ms-reveal, .container .weather .search .searchbar::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.container .weather .search .searchbar::-webkit-search-decoration, .container .weather .search .searchbar::-webkit-search-cancel-button, .container .weather .search .searchbar::-webkit-search-results-button, .container .weather .search .searchbar::-webkit-search-results-decoration {
+  display: none;
+}
 .container .weather .search .searchbar::-moz-placeholder {
   color: var(--border);
 }
@@ -572,7 +580,7 @@ body img {
   justify-content: start;
   align-items: start;
   flex-direction: column;
-  gap: 0.5rem;
+  gap: 0.7rem;
 }
 @media (max-width: 769px) {
   .container .week {
@@ -626,16 +634,30 @@ body img {
   font-size: 0.9rem;
   font-weight: 300;
 }
-.container .small {
+.container .streak {
   grid-area: 4/1/6/1;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: column;
+  padding: 1rem;
+  color: var(--text);
+}
+.container .streak span:not(.streak-num) {
+  font-size: 0.9rem;
+  font-weight: 300;
+}
+.container .streak .streak-num {
+  font-size: 4rem;
+  font-weight: bold;
 }
 @media (max-width: 769px) {
-  .container .small {
+  .container .streak {
     grid-area: 4/1/4/1;
   }
 }
 @media (max-width: 426px) {
-  .container .small {
+  .container .streak {
     grid-area: 4/1/5/1;
   }
 }/*# sourceMappingURL=main.css.map */

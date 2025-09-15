@@ -192,6 +192,20 @@
         cursor: $textcursor;
         text-transform: capitalize;
 
+        &::-ms-reveal,
+        &::-ms-clear {
+          display: none;
+          width: 0;
+          height: 0;
+        }
+
+        &::-webkit-search-decoration,
+        &::-webkit-search-cancel-button,
+        &::-webkit-search-results-button,
+        &::-webkit-search-results-decoration { 
+        display: none; 
+        }
+
         &::placeholder {
           color: var(--border);
         }
@@ -440,7 +454,7 @@
     grid-area: 4 / 2 / 6 / 2;
     padding: 1rem;
     @include flex(start, start, column);
-    gap: .5rem;
+    gap: .7rem;
     
     @include responsive("tablet") {
       grid-area: 4 / 2 / 4 / 2;
@@ -491,8 +505,21 @@
     }
   }
 
-  .small {
+  .streak {
     grid-area: 4 / 1 / 6 / 1;
+    @include flex(space-between, center, column);
+    padding: 1rem;
+    color: var(--text);
+
+    span:not(.streak-num) {
+      font-size: .9rem;
+      font-weight: 300;
+    }
+
+    .streak-num {
+      font-size: 4rem;
+      font-weight: bold;
+    }
 
     @include responsive("tablet") {
       grid-area: 4 / 1 / 4 / 1;
