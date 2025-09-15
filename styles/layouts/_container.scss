@@ -111,6 +111,7 @@
       @include flex(space-between);
       gap: 1rem;
       width: 100%;
+      -webkit-tap-highlight-color: transparent;
 
       .button {
         @include flex;
@@ -506,6 +507,7 @@
   }
 
   .streak {
+    user-select: none;
     grid-area: 4 / 1 / 6 / 1;
     @include flex(space-between, center, column);
     padding: 1rem;

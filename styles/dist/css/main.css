@@ -242,6 +242,7 @@ body img {
   flex-direction: row;
   gap: 1rem;
   width: 100%;
+  -webkit-tap-highlight-color: transparent;
 }
 .container .timer .btns .button {
   display: flex;
@@ -635,6 +636,9 @@ body img {
   font-weight: 300;
 }
 .container .streak {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   grid-area: 4/1/6/1;
   display: flex;
   justify-content: space-between;
