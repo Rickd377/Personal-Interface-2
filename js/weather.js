@@ -3,6 +3,8 @@ const searchBarIcon = document.querySelector(".weather .search .fa-magnifying-gl
 const citySpan = document.querySelector(".weather .current-weather .city");
 const weatherNowIcon = document.querySelector(".weather-now .weather-now-icon");
 const temperatureSpan = document.querySelector(".weather-now .temperature");
+const forecastDays = document.querySelectorAll('.forecast-day');
+const dayNames = ['S', 'M', 'T', 'W', 'T', 'F', 'S'];
 
 const weatherIcons = {
   Thunderstorm: "fa-solid fa-cloud-bolt",
@@ -89,4 +91,85 @@ searchBar.addEventListener("keydown", e => {
     searchBar.blur();
   }
 });
+
+function getDayLetter(date) {
+  return dayNames[date.getDay()];
+}
+
+async function fetchForecast(city) {
+  const apiKey = "4f91d01bf628ee6b33156de0a0248545";
+  const url = `https://api.openweathermap.org/data/2.5/forecast?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("City not found");
+    const data = await res.json();
+
+    const days = [];
+    let currentDay = null;
+    let temps = [];
+    let icons = [];
+
+    data.list.forEach(item => {
+      const date = new Date(item.dt_txt);
+      const day = date.getDate();
+      if (currentDay === null) currentDay = day;
+
+      if (day !== currentDay) {
+        days.push({
+          date: new Date(date.getFullYear(), date.getMonth(), currentDay),
+          temp: Math.round(temps.reduce((a, b) => a + b, 0) / temps.length),
+          icon: icons.length ? icons[0] : "Clouds"
+        });
+        currentDay = day;
+        temps = [];
+        icons = [];
+      }
+      temps.push(item.main.temp);
+      icons.push(item.weather[0].main);
+    });
+
+    if (temps.length) {
+      days.push({
+        date: new Date(data.list[data.list.length - 1].dt_txt),
+        temp: Math.round(temps.reduce((a, b) => a + b, 0) / temps.length),
+        icon: icons.length ? icons[0] : "Clouds"
+      });
+    }
+
+    for (let i = 0; i < 5; i++) {
+      const dayData = days[i];
+      if (!dayData) continue;
+      const forecastDay = forecastDays[i];
+      forecastDay.querySelector('.day-forecast').textContent = getDayLetter(dayData.date);
+      forecastDay.querySelector('.icon-forecast').innerHTML = `<i class="${weatherIcons[dayData.icon] || weatherIcons.Clouds}"></i>`;
+      forecastDay.querySelector('.temperature-forecast').textContent = dayData.temp;
+    }
+  } catch (e) {
+    forecastDays.forEach((forecastDay, i) => {
+      forecastDay.querySelector('.day-forecast').textContent = dayNames[(new Date().getDay() + i) % 7];
+      forecastDay.querySelector('.icon-forecast').innerHTML = `<i class="${weatherIcons.NoData}"></i>`;
+      forecastDay.querySelector('.temperature-forecast').textContent = "-";
+    });
+  }
+}
+
+async function fetchWeather(city, showNotFound = false) {
+  const apiKey = "4f91d01bf628ee6b33156de0a0248545";
+  const url = `https://api.openweathermap.org/data/2.5/weather?q=${encodeURIComponent(city)}&units=metric&appid=${apiKey}`;
+  try {
+    const res = await fetch(url);
+    if (!res.ok) throw new Error("City not found");
+    const data = await res.json();
+    const weatherMain = data.weather[0].main;
+    const temp = data.main.temp;
+    setWeather(data.name, weatherMain, temp);
+    fetchForecast(city);
+  } catch (e) {
+    if (showNotFound) {
+      setWeather(null, "NoData", null);
+      fetchForecast(city);
+    }
+  }
+}
+
 searchBar.addEventListener("blur", updateCity);

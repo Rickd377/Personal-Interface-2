@@ -245,8 +245,51 @@
       }
 
       .forecast {
-        gap: 1rem;
+        gap: .7rem;
         flex: 1;
+        @include flex(start, start, column);
+
+        .forecast-span {
+          font-weight: 600;
+          color: var(--text);
+        }
+
+        .forecast-days {
+          background: var(--subcontainer);
+          flex: 1;
+          width: 100%;
+          @include flex(start);
+          border-radius: calc($_parent-radius - $_parent-padding);
+          overflow: hidden;
+          gap: .05rem;
+
+          .forecast-day {
+            background: var(--border);
+            height: 100%;
+            flex: 1;
+            @include flex(space-between, center, column);
+            padding-block: .5rem;
+
+            .icon-forecast {
+              font-size: 1.3rem;
+            }
+
+            .temperature-forecast {
+              font-weight: 600;
+            }
+
+            .day-forecast {
+              opacity: .8;
+              font-size: .9rem;
+              font-weight: 300;
+            }
+
+            .wrapper {
+              @include flex(center, center, column);
+              gap: .3rem;
+            }
+          }
+        }
       }
 
       .current-weather {

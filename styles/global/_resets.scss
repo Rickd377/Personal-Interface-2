@@ -16,6 +16,11 @@ body {
   color: var(--text);
   display: flex;
   flex-direction: column;
+  overflow: hidden;
+
+  @include responsive("tablet") {
+    overflow: auto;
+  }
 
   main {
     flex: 1;
