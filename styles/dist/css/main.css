@@ -23,19 +23,19 @@
   --text: hsl(0, 0%, 90%);
 }
 
+[data-theme=darkpurple] {
+  --background: hsl(265, 70%, 15%);
+  --subcontainer: hsl(265, 70%, 20%);
+  --primary: hsl(265, 70%, 25%);
+  --border: hsl(265, 70%, 30%);
+  --text: hsl(0, 0%, 90%);
+}
+
 [data-theme=red] {
   --background: hsl(0, 70%, 60%);
   --subcontainer: hsl(0, 70%, 65%);
   --primary: hsl(0, 70%, 70%);
   --border: hsl(0, 70%, 75%);
-  --text: hsl(0, 0%, 90%);
-}
-
-[data-theme=orange] {
-  --background: hsl(25, 80%, 55%);
-  --subcontainer: hsl(25, 80%, 60%);
-  --primary: hsl(25, 80%, 65%);
-  --border: hsl(25, 80%, 70%);
   --text: hsl(0, 0%, 90%);
 }
 
@@ -70,7 +70,7 @@
 }
 
 * {
-  cursor: url("/assets/cursor-default.cur"), auto !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-default.cur"), auto !important;
 }
 
 body {
@@ -175,7 +175,7 @@ body img {
   width: 1.5rem;
   aspect-ratio: 1;
   border-radius: 50%;
-  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
   border: 1px solid rgba(249.9, 249.9, 249.9, 0.5);
 }
 .container .theme-picker > *.black {
@@ -187,11 +187,11 @@ body img {
 .container .theme-picker > *.green {
   background: linear-gradient(-45deg, hsl(130, 35%, 10%) 50%, hsl(130, 35%, 15%) 50%);
 }
+.container .theme-picker > *.darkpurple {
+  background: linear-gradient(-45deg, hsl(265, 70%, 15%) 50%, hsl(265, 70%, 20%) 50%);
+}
 .container .theme-picker > *.red {
   background: linear-gradient(-45deg, hsl(0, 70%, 60%) 50%, hsl(0, 70%, 65%) 50%);
-}
-.container .theme-picker > *.orange {
-  background: linear-gradient(-45deg, hsl(25, 80%, 55%) 50%, hsl(25, 80%, 60%) 50%);
 }
 .container .theme-picker > *.blue {
   background: linear-gradient(-45deg, hsl(200, 70%, 55%) 50%, hsl(200, 70%, 60%) 50%);
@@ -226,7 +226,7 @@ body img {
 .container .timer .time .hours,
 .container .timer .time .minutes,
 .container .timer .time .seconds {
-  cursor: url("/assets/cursor-text.cur"), text !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-text.cur"), text !important;
 }
 .container .timer .time .tempInput {
   font-size: 2rem;
@@ -270,7 +270,7 @@ body img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
-  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
 }
 .container .timer .btns .button > * {
   pointer-events: none;
@@ -338,7 +338,7 @@ body img {
   font-family: "Inter", sans-serif;
   outline: none;
   color: var(--text);
-  cursor: url("/assets/cursor-text.cur"), text !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-text.cur"), text !important;
   text-transform: capitalize;
 }
 .container .weather .search .searchbar::-ms-reveal, .container .weather .search .searchbar::-ms-clear {
@@ -367,7 +367,7 @@ body img {
   pointer-events: none;
 }
 .container .weather .search i.fa-xmark {
-  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
 }
 .container .weather .main-weather {
   width: 100%;
@@ -502,7 +502,7 @@ body img {
   font-family: "Inter", sans-serif;
   font-size: 1rem;
   padding: 1rem;
-  cursor: url("/assets/cursor-text.cur"), text !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-text.cur"), text !important;
   caret-color: var(--text);
 }
 .container .notes textarea::-moz-placeholder {
@@ -518,7 +518,7 @@ body img {
   background: var(--border);
   border: 3.5px solid var(--background);
   border-radius: 0.5rem;
-  cursor: url("/assets/cursor-scroll.cur"), grab !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-scroll.cur"), grab !important;
 }
 .container .notes textarea::-webkit-scrollbar-track {
   background: var(--background);
@@ -573,7 +573,7 @@ body img {
   background: var(--border);
   border: 2px solid var(--background);
   border-radius: 0.5rem;
-  cursor: url("/assets/cursor-scroll-horizonal.cur"), grab !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-scroll-horizonal.cur"), grab !important;
 }
 .container .calculator .result-display::-webkit-scrollbar-track {
   background: var(--background);
@@ -593,7 +593,7 @@ body img {
 }
 .container .calculator .buttons-grid > * {
   border-radius: calc(23px - 1rem);
-  cursor: url("/assets/cursor-pointer.cur"), pointer !important;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
   display: flex;
   justify-content: center;
   align-items: center;
