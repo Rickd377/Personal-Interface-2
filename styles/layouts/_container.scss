@@ -255,16 +255,13 @@
         }
 
         .forecast-days {
-          background: var(--subcontainer);
           flex: 1;
           width: 100%;
           @include flex(start);
           border-radius: calc($_parent-radius - $_parent-padding);
           overflow: hidden;
-          gap: .05rem;
 
           .forecast-day {
-            background: var(--border);
             height: 100%;
             flex: 1;
             @include flex(space-between, center, column);
@@ -272,10 +269,18 @@
 
             .icon-forecast {
               font-size: 1.3rem;
+
+              @include responsive("tablet") {
+                font-size: 1rem;
+              }
             }
 
             .temperature-forecast {
               font-weight: 600;
+
+              @include responsive("tablet") {
+                font-weight: 400;
+              }
             }
 
             .day-forecast {
@@ -391,11 +396,13 @@
 
     @include responsive("tablet") {
       grid-area: 6 / 2 / 6 / 2;
+      max-width: 312px;
       width: 100%;
     }
 
     @include responsive("mobile") {
       grid-area: 9 / 1 / 10 / 1;
+      max-width: 340px;
       width: 100%;
     }
 
@@ -411,6 +418,7 @@
       color: var(--text);
       overflow-y: hidden;
       overflow-x: auto;
+      white-space: nowrap;
 
       &::-webkit-scrollbar {
         height: 6px;

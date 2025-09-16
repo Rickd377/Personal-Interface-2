@@ -7,6 +7,22 @@
   --text: hsl(0, 0%, 90%);
 }
 
+[data-theme=darkblue] {
+  --background: hsl(220, 70%, 10%);
+  --subcontainer: hsl(220, 70%, 15%);
+  --primary: hsl(220, 70%, 20%);
+  --border: hsl(220, 70%, 25%);
+  --text: hsl(0, 0%, 90%);
+}
+
+[data-theme=green] {
+  --background: hsl(130, 35%, 10%);
+  --subcontainer: hsl(130, 35%, 15%);
+  --primary: hsl(130, 35%, 20%);
+  --border: hsl(130, 35%, 25%);
+  --text: hsl(0, 0%, 90%);
+}
+
 [data-theme=red] {
   --background: hsl(0, 70%, 60%);
   --subcontainer: hsl(0, 70%, 65%);
@@ -20,22 +36,6 @@
   --subcontainer: hsl(25, 80%, 60%);
   --primary: hsl(25, 80%, 65%);
   --border: hsl(25, 80%, 70%);
-  --text: hsl(0, 0%, 90%);
-}
-
-[data-theme=yellow] {
-  --background: hsl(40, 70%, 55%);
-  --subcontainer: hsl(40, 70%, 60%);
-  --primary: hsl(40, 70%, 65%);
-  --border: hsl(40, 70%, 70%);
-  --text: hsl(0, 0%, 90%);
-}
-
-[data-theme=green] {
-  --background: hsl(130, 40%, 50%);
-  --subcontainer: hsl(130, 40%, 55%);
-  --primary: hsl(130, 40%, 60%);
-  --border: hsl(130, 40%, 65%);
   --text: hsl(0, 0%, 90%);
 }
 
@@ -87,6 +87,12 @@ body {
   body {
     overflow: auto;
   }
+}
+body::-moz-selection {
+  background: var(--border);
+}
+body::selection {
+  background: var(--border);
 }
 body main {
   flex: 1;
@@ -175,17 +181,17 @@ body img {
 .container .theme-picker > *.black {
   background: linear-gradient(-45deg, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 15%) 50%);
 }
+.container .theme-picker > *.darkblue {
+  background: linear-gradient(-45deg, hsl(220, 70%, 10%) 50%, hsl(220, 70%, 15%) 50%);
+}
+.container .theme-picker > *.green {
+  background: linear-gradient(-45deg, hsl(130, 35%, 10%) 50%, hsl(130, 35%, 15%) 50%);
+}
 .container .theme-picker > *.red {
   background: linear-gradient(-45deg, hsl(0, 70%, 60%) 50%, hsl(0, 70%, 65%) 50%);
 }
 .container .theme-picker > *.orange {
   background: linear-gradient(-45deg, hsl(25, 80%, 55%) 50%, hsl(25, 80%, 60%) 50%);
-}
-.container .theme-picker > *.yellow {
-  background: linear-gradient(-45deg, hsl(40, 70%, 55%) 50%, hsl(40, 70%, 60%) 50%);
-}
-.container .theme-picker > *.green {
-  background: linear-gradient(-45deg, hsl(130, 40%, 50%) 50%, hsl(130, 40%, 55%) 50%);
 }
 .container .theme-picker > *.blue {
   background: linear-gradient(-45deg, hsl(200, 70%, 55%) 50%, hsl(200, 70%, 60%) 50%);
@@ -392,7 +398,6 @@ body img {
   color: var(--text);
 }
 .container .weather .main-weather .forecast .forecast-days {
-  background: var(--subcontainer);
   flex: 1;
   width: 100%;
   display: flex;
@@ -401,10 +406,8 @@ body img {
   flex-direction: row;
   border-radius: calc(23px - 1rem);
   overflow: hidden;
-  gap: 0.05rem;
 }
 .container .weather .main-weather .forecast .forecast-days .forecast-day {
-  background: var(--border);
   height: 100%;
   flex: 1;
   display: flex;
@@ -416,8 +419,18 @@ body img {
 .container .weather .main-weather .forecast .forecast-days .forecast-day .icon-forecast {
   font-size: 1.3rem;
 }
+@media (max-width: 769px) {
+  .container .weather .main-weather .forecast .forecast-days .forecast-day .icon-forecast {
+    font-size: 1rem;
+  }
+}
 .container .weather .main-weather .forecast .forecast-days .forecast-day .temperature-forecast {
   font-weight: 600;
+}
+@media (max-width: 769px) {
+  .container .weather .main-weather .forecast .forecast-days .forecast-day .temperature-forecast {
+    font-weight: 400;
+  }
 }
 .container .weather .main-weather .forecast .forecast-days .forecast-day .day-forecast {
   opacity: 0.8;
@@ -528,12 +541,14 @@ body img {
 @media (max-width: 769px) {
   .container .calculator {
     grid-area: 6/2/6/2;
+    max-width: 312px;
     width: 100%;
   }
 }
 @media (max-width: 426px) {
   .container .calculator {
     grid-area: 9/1/10/1;
+    max-width: 340px;
     width: 100%;
   }
 }
@@ -549,6 +564,7 @@ body img {
   color: var(--text);
   overflow-y: hidden;
   overflow-x: auto;
+  white-space: nowrap;
 }
 .container .calculator .result-display::-webkit-scrollbar {
   height: 6px;

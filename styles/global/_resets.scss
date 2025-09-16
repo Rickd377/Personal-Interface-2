@@ -22,6 +22,10 @@ body {
     overflow: auto;
   }
 
+  &::selection {
+    background: var(--border);
+  }
+
   main {
     flex: 1;
     @include flex($direction: column);

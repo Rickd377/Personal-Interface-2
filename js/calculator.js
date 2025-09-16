@@ -6,10 +6,12 @@ function appendToDisplay(value) {
   } else {
     resultDisplay.innerHTML += value;
   }
+  scrollResultRight();
 }
 
 function setDisplay(value) {
   resultDisplay.innerHTML = value;
+  scrollResultRight();
 }
 
 function getDisplay() {
@@ -18,6 +20,7 @@ function getDisplay() {
 
 document.querySelector("#clearBtn").addEventListener("click", () => {
   setDisplay("0");
+  scrollResultRight();
 });
 
 for (let i = 0; i <= 9; i++) {
@@ -65,6 +68,7 @@ document.querySelector("#deleteBtn").addEventListener("click", () => {
     setDisplay("0");
   } else {
     setDisplay(display);
+    scrollResultRight();
   }
 });
 
@@ -96,6 +100,7 @@ document.querySelector("#equalsBtn").addEventListener("click", () => {
     let result = eval(expression);
     if (result === undefined || isNaN(result)) result = "0";
     setDisplay(result.toString());
+    scrollResultRight();
   } catch {
     setDisplay("Error");
   }
@@ -110,4 +115,8 @@ function appendOperator(op) {
   } else {
     appendToDisplay(op);
   }
+}
+
+function scrollResultRight() {
+  resultDisplay.scrollLeft = resultDisplay.scrollWidth;
 }

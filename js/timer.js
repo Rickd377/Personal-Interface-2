@@ -13,6 +13,10 @@ function updateDisplay() {
   });
 }
 
+function saveInitialTime() {
+  localStorage.setItem("timerInitialTime", JSON.stringify(initialTime));
+}
+
 function getTotalMs(time) {
   return (
     parseInt(time.hours, 10) * 60 * 60 * 1000 +
@@ -28,6 +32,19 @@ function setTimeFromMs(ms) {
   currentTime.minutes = Math.floor(ms / 60000);
   ms %= 60000;
   currentTime.seconds = Math.floor(ms / 1000);
+}
+
+function loadInitialTime() {
+  const saved = localStorage.getItem("timerInitialTime");
+  if (saved) {
+    try {
+      const obj = JSON.parse(saved);
+      initialTime.hours = obj.hours || 0;
+      initialTime.minutes = obj.minutes || 0;
+      initialTime.seconds = obj.seconds || 0;
+      currentTime = { ...initialTime };
+    } catch {}
+  }
 }
 
 timeFields.forEach(className => {
@@ -58,6 +75,7 @@ timeFields.forEach(className => {
       div.innerText = val.toString().padStart(2, "0");
       currentTime[className] = val;
       initialTime[className] = val;
+      saveInitialTime(); // Save after change
     }
 
     input.addEventListener("blur", () => {
@@ -113,19 +131,20 @@ function resetTimerOrStopwatch() {
   timerInterval = null;
   timerState = "stopped";
   if (mode === "timer") {
-    if (
+    const isAtInitial =
       currentTime.hours === initialTime.hours &&
       currentTime.minutes === initialTime.minutes &&
-      currentTime.seconds === initialTime.seconds &&
-      (initialTime.hours !== 0 || initialTime.minutes !== 0 || initialTime.seconds !== 0) &&
-      resetToZeroNext
-    ) {
-      currentTime = { hours: 0, minutes: 0, seconds: 0 };
-      initialTime = { hours: 0, minutes: 0, seconds: 0 };
-      resetToZeroNext = false;
-    } else {
+      currentTime.seconds === initialTime.seconds;
+
+    if (!resetToZeroNext || !isAtInitial) {
+      loadInitialTime();
       currentTime = { ...initialTime };
       resetToZeroNext = true;
+    } else {
+      currentTime = { hours: 0, minutes: 0, seconds: 0 };
+      initialTime = { hours: 0, minutes: 0, seconds: 0 };
+      saveInitialTime();
+      resetToZeroNext = false;
     }
   } else {
     currentTime = { hours: 0, minutes: 0, seconds: 0 };
@@ -172,10 +191,6 @@ document.querySelector(".reset").addEventListener("click", () => {
 });
 
 window.addEventListener("DOMContentLoaded", () => {
-  timeFields.forEach(field => {
-    const val = parseInt(timeDivs[field].innerText, 10) || 0;
-    currentTime[field] = val;
-    initialTime[field] = val;
-  });
-  updateDisplay()
+  loadInitialTime();
+  updateDisplay();
 });
