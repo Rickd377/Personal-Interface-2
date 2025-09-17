@@ -127,6 +127,14 @@
   --text: hsl(330, 70%, 85%);
 }
 
+@keyframes bounceText {
+  0%, 100% {
+    transform: translate(0%, 0%);
+  }
+  50% {
+    transform: translate(0%, -1px);
+  }
+}
 *, *::before, *::after {
   margin: 0;
   padding: 0;
@@ -690,13 +698,13 @@ body img {
   align-items: center;
   flex-direction: row;
   color: var(--text);
-  font-size: 0.9rem;
+  font-size: 0.85rem;
   font-weight: 300;
-  opacity: 0.8;
 }
 .container .copyright span,
 .container .copyright a {
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  animation: bounceText 1s ease-in-out infinite;
 }
 @media (max-width: 769px) {
   .container .copyright {
@@ -727,8 +735,25 @@ body img {
     grid-area: 6/1/7/1;
   }
 }
-.container .week .current-week {
+.container .week .top-wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+}
+.container .week .top-wrapper .current-week {
   font-weight: 600;
+}
+.container .week .top-wrapper .icon-wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  gap: 1rem;
+}
+.container .week .top-wrapper .icon-wrapper i {
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
 }
 .container .week .day-display {
   width: 100%;
@@ -759,6 +784,15 @@ body img {
 }
 .container .week .day-display .day.active-day {
   background: var(--border);
+}
+.container .week .day-display .day.active-day .weekdate {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+.container .week .day-display .day.active-day .weekday {
+  opacity: 1;
+  font-size: 0.9rem;
+  font-weight: 500;
 }
 .container .week .day-display .day .weekdate {
   font-size: 1.05rem;

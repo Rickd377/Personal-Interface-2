@@ -502,13 +502,13 @@
     height: 2.7rem;
     @include flex;
     color: var(--text);
-    font-size: .9rem;
+    font-size: .85rem;
     font-weight: 300;
-    opacity: .8;
 
     span,
     a {
       cursor: $pointercursor;
+      animation: bounceText 1s ease-in-out infinite;
     }
 
     @include responsive("tablet") {
@@ -534,8 +534,22 @@
       grid-area: 6 / 1 / 7 / 1;
     }
 
-    .current-week {
-      font-weight: 600;
+    .top-wrapper {
+      @include flex(space-between);
+      width: 100%;
+
+      .current-week {
+        font-weight: 600;
+      }
+
+      .icon-wrapper {
+        @include flex;
+        gap: 1rem;
+        
+        i {
+          cursor: $pointercursor;
+        }
+      }
     }
 
     .day-display {
@@ -559,6 +573,17 @@
 
         &.active-day {
           background: var(--border);
+
+          .weekdate {
+            font-size: 1.2rem;
+            font-weight: 700;
+          }
+
+          .weekday {
+            opacity: 1;
+            font-size: .9rem;
+            font-weight: 500;
+          }
         }
 
         .weekdate {

@@ -115,7 +115,7 @@
         </div>
       </div>
       <div class="notes">
-        <textarea name="notes" id="notes" spellcheck="false" placeholder="Type your notes..."></textarea>
+        <textarea name="notes" id="notes" spellcheck="false" placeholder="Write your notes for today..."></textarea>
       </div>
       <div class="calculator">
         <div class="result-display">0</div>
@@ -147,7 +147,13 @@
         <!-- <span>Copyright © 2025</span> -->
       </div>
       <div class="week">
-        <span class="current-week"></span>
+        <div class="top-wrapper">
+          <span class="current-week"></span>
+          <div class="icon-wrapper">
+            <i id="prevWeek" class="fa-regular fa-sharp fa-angle-left"></i>
+            <i id="nextWeek" class="fa-regular fa-sharp fa-angle-right"></i>
+          </div>
+        </div>
         <div class="day-display">
           <div class="day">
             <span class="weekdate"></span>

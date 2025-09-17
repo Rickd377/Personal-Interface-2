@@ -108,7 +108,7 @@ function startTimerOrStopwatch () {
         const icon = document.querySelector(".start-stop i");
         const span = document.querySelector(".start-stop span");
         icon.className = "fa-sharp fa-solid fa-play";
-        span.innerText = "Start"
+        span.innerText = "Start";
       }
     }, 1000);
   } else if (mode === "stopwatch") {
