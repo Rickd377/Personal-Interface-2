@@ -14,6 +14,7 @@
   grid-template-columns: auto 1fr 1fr auto;
   grid-template-rows: auto 1fr 1fr 1fr auto;
   gap: $_padding;
+  position: relative;
 
   @include responsive("tablet") {
     grid-template-columns: 1fr 1fr;
@@ -29,6 +30,24 @@
     border-radius: $_inner-radius;
     border: 2px solid var(--border);
     background: var(--subcontainer);
+  }
+
+  .theme-switch {
+    position: fixed;
+    right: .5rem;
+    top: .5rem;
+    font-size: 1.5rem;
+    cursor: $pointercursor;
+    z-index: 99;
+    -webkit-tap-highlight-color: transparent;
+    width: 2.7rem;
+    aspect-ratio: 1;
+    background: var(--subcontainer);
+    @include flex;
+
+    i {
+      pointer-events: none;
+    }
   }
 
   .theme-picker {
@@ -53,12 +72,6 @@
       border-radius: 50%;
       cursor: $pointercursor;
       border: 1px solid rgba($white, .5);
-
-      @each $theme, $map in $themes {
-        &.#{$theme} {
-          background: linear-gradient(-45deg, map-get($map, background) 50%, map-get($map, subcontainer) 50%);
-        }
-      }
 
       &:checked {
         transform: scale(1.15);

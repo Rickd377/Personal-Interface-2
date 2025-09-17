@@ -7,60 +7,124 @@
   --text: hsl(0, 0%, 90%);
 }
 
-[data-theme=darkblue] {
-  --background: hsl(220, 70%, 10%);
-  --subcontainer: hsl(220, 70%, 15%);
-  --primary: hsl(220, 70%, 20%);
-  --border: hsl(220, 70%, 25%);
-  --text: hsl(0, 0%, 90%);
+[data-theme=white] {
+  --background: hsl(0, 0%, 85%);
+  --subcontainer: hsl(0, 0%, 80%);
+  --primary: hsl(0, 0%, 75%);
+  --border: hsl(0, 0%, 70%);
+  --text: hsl(0, 0%, 10%);
 }
 
-[data-theme=green] {
-  --background: hsl(130, 35%, 10%);
-  --subcontainer: hsl(130, 35%, 15%);
-  --primary: hsl(130, 35%, 20%);
-  --border: hsl(130, 35%, 25%);
-  --text: hsl(0, 0%, 90%);
+[data-theme=light-brown] {
+  --background: hsl(30, 40%, 85%);
+  --subcontainer: hsl(30, 40%, 80%);
+  --primary: hsl(30, 40%, 75%);
+  --border: hsl(30, 40%, 70%);
+  --text: hsl(30, 40%, 20%);
 }
 
-[data-theme=darkpurple] {
-  --background: hsl(265, 70%, 15%);
-  --subcontainer: hsl(265, 70%, 20%);
-  --primary: hsl(265, 70%, 25%);
-  --border: hsl(265, 70%, 30%);
-  --text: hsl(0, 0%, 90%);
+[data-theme=dark-brown] {
+  --background: hsl(30, 40%, 20%);
+  --subcontainer: hsl(30, 40%, 25%);
+  --primary: hsl(30, 40%, 30%);
+  --border: hsl(30, 40%, 35%);
+  --text: hsl(30, 40%, 85%);
 }
 
-[data-theme=red] {
-  --background: hsl(0, 70%, 60%);
-  --subcontainer: hsl(0, 70%, 65%);
+[data-theme=light-red] {
+  --background: hsl(0, 70%, 80%);
+  --subcontainer: hsl(0, 70%, 75%);
   --primary: hsl(0, 70%, 70%);
-  --border: hsl(0, 70%, 75%);
-  --text: hsl(0, 0%, 90%);
+  --border: hsl(0, 70%, 65%);
+  --text: hsl(0, 70%, 20%);
 }
 
-[data-theme=blue] {
-  --background: hsl(200, 70%, 55%);
-  --subcontainer: hsl(200, 70%, 60%);
-  --primary: hsl(200, 70%, 65%);
-  --border: hsl(200, 70%, 70%);
-  --text: hsl(0, 0%, 90%);
+[data-theme=dark-red] {
+  --background: hsl(0, 70%, 20%);
+  --subcontainer: hsl(0, 70%, 25%);
+  --primary: hsl(0, 70%, 30%);
+  --border: hsl(0, 70%, 35%);
+  --text: hsl(0, 70%, 85%);
 }
 
-[data-theme=purple] {
-  --background: hsl(245, 50%, 60%);
-  --subcontainer: hsl(245, 50%, 65%);
-  --primary: hsl(245, 50%, 70%);
-  --border: hsl(245, 50%, 75%);
-  --text: hsl(0, 0%, 90%);
+[data-theme=light-orange] {
+  --background: hsl(30, 80%, 80%);
+  --subcontainer: hsl(30, 80%, 75%);
+  --primary: hsl(30, 80%, 70%);
+  --border: hsl(30, 80%, 65%);
+  --text: hsl(30, 80%, 20%);
 }
 
-[data-theme=pink] {
-  --background: hsl(300, 35%, 60%);
-  --subcontainer: hsl(300, 35%, 65%);
-  --primary: hsl(300, 35%, 70%);
-  --border: hsl(300, 35%, 75%);
-  --text: hsl(0, 0%, 90%);
+[data-theme=dark-orange] {
+  --background: hsl(30, 80%, 20%);
+  --subcontainer: hsl(30, 80%, 25%);
+  --primary: hsl(30, 80%, 30%);
+  --border: hsl(30, 80%, 35%);
+  --text: hsl(30, 80%, 85%);
+}
+
+[data-theme=light-green] {
+  --background: hsl(140, 60%, 80%);
+  --subcontainer: hsl(140, 60%, 70%);
+  --primary: hsl(140, 60%, 60%);
+  --border: hsl(140, 60%, 50%);
+  --text: hsl(140, 60%, 20%);
+}
+
+[data-theme=dark-green] {
+  --background: hsl(140, 60%, 20%);
+  --subcontainer: hsl(140, 60%, 25%);
+  --primary: hsl(140, 60%, 30%);
+  --border: hsl(140, 60%, 35%);
+  --text: hsl(140, 60%, 85%);
+}
+
+[data-theme=light-blue] {
+  --background: hsl(210, 70%, 80%);
+  --subcontainer: hsl(210, 70%, 75%);
+  --primary: hsl(210, 70%, 70%);
+  --border: hsl(210, 70%, 65%);
+  --text: hsl(210, 70%, 20%);
+}
+
+[data-theme=dark-blue] {
+  --background: hsl(210, 70%, 20%);
+  --subcontainer: hsl(210, 70%, 25%);
+  --primary: hsl(210, 70%, 30%);
+  --border: hsl(210, 70%, 35%);
+  --text: hsl(210, 70%, 85%);
+}
+
+[data-theme=light-purple] {
+  --background: hsl(270, 60%, 80%);
+  --subcontainer: hsl(270, 60%, 75%);
+  --primary: hsl(270, 60%, 70%);
+  --border: hsl(270, 60%, 65%);
+  --text: hsl(270, 60%, 20%);
+}
+
+[data-theme=dark-purple] {
+  --background: hsl(270, 60%, 20%);
+  --subcontainer: hsl(270, 60%, 25%);
+  --primary: hsl(270, 60%, 30%);
+  --border: hsl(270, 60%, 35%);
+  --text: hsl(270, 60%, 85%);
+}
+
+[data-theme=light-pink] {
+  --background: hsl(330, 70%, 80%);
+  --subcontainer: hsl(330, 70%, 75%);
+  --primary: hsl(330, 70%, 70%);
+  --border: hsl(330, 70%, 65%);
+  --text: hsl(330, 70%, 20%);
+}
+
+[data-theme=dark-pink] {
+  --background: hsl(330, 70%, 20%);
+  --subcontainer: hsl(330, 70%, 25%);
+  --primary: hsl(330, 70%, 30%);
+  --border: hsl(330, 70%, 35%);
+  --text: hsl(330, 70%, 85%);
 }
 
 *, *::before, *::after {
@@ -130,6 +194,7 @@ body img {
   grid-template-columns: auto 1fr 1fr auto;
   grid-template-rows: auto 1fr 1fr 1fr auto;
   gap: 1rem;
+  position: relative;
 }
 @media (max-width: 769px) {
   .container {
@@ -147,6 +212,25 @@ body img {
   border-radius: 23px;
   border: 2px solid var(--border);
   background: var(--subcontainer);
+}
+.container .theme-switch {
+  position: fixed;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 1.5rem;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  z-index: 99;
+  -webkit-tap-highlight-color: transparent;
+  width: 2.7rem;
+  aspect-ratio: 1;
+  background: var(--subcontainer);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.container .theme-switch i {
+  pointer-events: none;
 }
 .container .theme-picker {
   grid-area: 1/4/1/4;
@@ -177,30 +261,6 @@ body img {
   border-radius: 50%;
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
   border: 1px solid rgba(249.9, 249.9, 249.9, 0.5);
-}
-.container .theme-picker > *.black {
-  background: linear-gradient(-45deg, hsl(0, 0%, 10%) 50%, hsl(0, 0%, 15%) 50%);
-}
-.container .theme-picker > *.darkblue {
-  background: linear-gradient(-45deg, hsl(220, 70%, 10%) 50%, hsl(220, 70%, 15%) 50%);
-}
-.container .theme-picker > *.green {
-  background: linear-gradient(-45deg, hsl(130, 35%, 10%) 50%, hsl(130, 35%, 15%) 50%);
-}
-.container .theme-picker > *.darkpurple {
-  background: linear-gradient(-45deg, hsl(265, 70%, 15%) 50%, hsl(265, 70%, 20%) 50%);
-}
-.container .theme-picker > *.red {
-  background: linear-gradient(-45deg, hsl(0, 70%, 60%) 50%, hsl(0, 70%, 65%) 50%);
-}
-.container .theme-picker > *.blue {
-  background: linear-gradient(-45deg, hsl(200, 70%, 55%) 50%, hsl(200, 70%, 60%) 50%);
-}
-.container .theme-picker > *.purple {
-  background: linear-gradient(-45deg, hsl(245, 50%, 60%) 50%, hsl(245, 50%, 65%) 50%);
-}
-.container .theme-picker > *.pink {
-  background: linear-gradient(-45deg, hsl(300, 35%, 60%) 50%, hsl(300, 35%, 65%) 50%);
 }
 .container .theme-picker > *:checked {
   transform: scale(1.15);
