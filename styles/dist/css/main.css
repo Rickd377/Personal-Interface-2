@@ -694,6 +694,10 @@ body img {
   font-weight: 300;
   opacity: 0.8;
 }
+.container .copyright span,
+.container .copyright a {
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+}
 @media (max-width: 769px) {
   .container .copyright {
     grid-area: 7/2/7/2;

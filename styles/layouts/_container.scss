@@ -506,6 +506,11 @@
     font-weight: 300;
     opacity: .8;
 
+    span,
+    a {
+      cursor: $pointercursor;
+    }
+
     @include responsive("tablet") {
       grid-area: 7 / 2 / 7 / 2;
     }
