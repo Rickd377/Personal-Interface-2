@@ -1,0 +1,11 @@
+.date {
+  grid-area: 1 / 1 / 1 / 1;
+  height: 2.7rem;
+  @include flex;
+  font-style: italic;
+
+  span {
+    padding-inline: 1rem;
+    white-space: nowrap;
+  }
+}

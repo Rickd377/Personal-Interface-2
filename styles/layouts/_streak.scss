@@ -1,0 +1,25 @@
+.streak {
+  user-select: none;
+  grid-area: 4 / 1 / 6 / 1;
+  @include flex(space-between, center, column);
+  padding: 1rem;
+  color: var(--text);
+
+  span:not(.streak-num) {
+    font-size: .9rem;
+    font-weight: 300;
+  }
+
+  .streak-num {
+    font-size: 4rem;
+    font-weight: bold;
+  }
+
+  @include responsive("tablet") {
+    grid-area: 4 / 1 / 4 / 1;
+  }
+
+  @include responsive("mobile") {
+    grid-area: 4 / 1 / 5 / 1;
+  }
+}

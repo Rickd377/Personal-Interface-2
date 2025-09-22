@@ -1,0 +1,83 @@
+.week {
+  grid-area: 4 / 2 / 6 / 2;
+  padding: 1rem;
+  @include flex(start, start, column);
+  gap: .7rem;
+  
+  @include responsive("tablet") {
+    grid-area: 4 / 2 / 4 / 2;
+  }
+
+  @include responsive("mobile") {
+    grid-area: 6 / 1 / 7 / 1;
+  }
+
+  .top-wrapper {
+    @include flex(space-between);
+    width: 100%;
+
+    .current-week {
+      font-weight: 600;
+    }
+
+    .icon-wrapper {
+      @include flex;
+      gap: 1rem;
+      
+      i {
+        cursor: $pointercursor;
+        -webkit-tap-highlight-color: transparent;
+      }
+    }
+  }
+
+  .day-display {
+    width: 100%;
+    flex: 1;
+    background: var(--subcontainer);
+    border: 1px solid var(--border);
+    border-radius: calc($parent-radius - $parent-padding);
+    @include flex;
+    overflow: hidden;
+    gap: .05rem;
+
+    .day {
+      flex: 1;
+      height: 100%;
+      border-top: 10px solid var(--border);
+      @include flex(space-between, center, column);
+      background: var(--primary);
+      padding-block: .5rem;
+      user-select: none;
+      cursor: $pointercursor;
+
+      &.active-day {
+        background: var(--border);
+
+        .weekdate {
+          font-size: 1.2rem;
+          font-weight: 700;
+        }
+
+        .weekday {
+          opacity: 1;
+          font-size: .9rem;
+          font-weight: 500;
+        }
+      }
+
+      .weekdate {
+        font-size: 1.05rem;
+        font-weight: 600;
+        pointer-events: none;
+      }
+
+      .weekday {
+        opacity: .8;
+        font-size: .9rem;
+        font-weight: 300;
+        pointer-events: none;
+      }
+    }
+  }
+}

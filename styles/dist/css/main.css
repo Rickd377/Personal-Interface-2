@@ -8,19 +8,19 @@
 }
 
 [data-theme=white] {
-  --background: hsl(0, 0%, 85%);
-  --subcontainer: hsl(0, 0%, 80%);
-  --primary: hsl(0, 0%, 75%);
-  --border: hsl(0, 0%, 70%);
-  --text: hsl(0, 0%, 10%);
+  --background: hsl(0, 0%, 70%);
+  --subcontainer: hsl(0, 0%, 75%);
+  --primary: hsl(0, 0%, 80%);
+  --border: hsl(0, 0%, 85%);
+  --text: hsl(0, 0%, 20%);
 }
 
 [data-theme=light-brown] {
-  --background: hsl(30, 40%, 85%);
-  --subcontainer: hsl(30, 40%, 80%);
-  --primary: hsl(30, 40%, 75%);
-  --border: hsl(30, 40%, 70%);
-  --text: hsl(30, 40%, 20%);
+  --background: hsl(30, 40%, 70%);
+  --subcontainer: hsl(30, 40%, 75%);
+  --primary: hsl(30, 40%, 80%);
+  --border: hsl(30, 40%, 85%);
+  --text: hsl(30, 40%, 30%);
 }
 
 [data-theme=dark-brown] {
@@ -32,11 +32,11 @@
 }
 
 [data-theme=light-red] {
-  --background: hsl(0, 70%, 80%);
-  --subcontainer: hsl(0, 70%, 75%);
-  --primary: hsl(0, 70%, 70%);
-  --border: hsl(0, 70%, 65%);
-  --text: hsl(0, 70%, 20%);
+  --background: hsl(0, 70%, 65%);
+  --subcontainer: hsl(0, 70%, 70%);
+  --primary: hsl(0, 70%, 75%);
+  --border: hsl(0, 70%, 80%);
+  --text: hsl(0, 70%, 30%);
 }
 
 [data-theme=dark-red] {
@@ -48,11 +48,11 @@
 }
 
 [data-theme=light-orange] {
-  --background: hsl(30, 80%, 80%);
-  --subcontainer: hsl(30, 80%, 75%);
-  --primary: hsl(30, 80%, 70%);
-  --border: hsl(30, 80%, 65%);
-  --text: hsl(30, 80%, 20%);
+  --background: hsl(30, 80%, 65%);
+  --subcontainer: hsl(30, 80%, 70%);
+  --primary: hsl(30, 80%, 75%);
+  --border: hsl(30, 80%, 80%);
+  --text: hsl(30, 80%, 30%);
 }
 
 [data-theme=dark-orange] {
@@ -64,11 +64,11 @@
 }
 
 [data-theme=light-green] {
-  --background: hsl(140, 60%, 80%);
-  --subcontainer: hsl(140, 60%, 70%);
-  --primary: hsl(140, 60%, 60%);
-  --border: hsl(140, 60%, 50%);
-  --text: hsl(140, 60%, 20%);
+  --background: hsl(140, 60%, 50%);
+  --subcontainer: hsl(140, 60%, 60%);
+  --primary: hsl(140, 60%, 70%);
+  --border: hsl(140, 60%, 80%);
+  --text: hsl(140, 60%, 30%);
 }
 
 [data-theme=dark-green] {
@@ -80,11 +80,11 @@
 }
 
 [data-theme=light-blue] {
-  --background: hsl(210, 70%, 80%);
-  --subcontainer: hsl(210, 70%, 75%);
-  --primary: hsl(210, 70%, 70%);
-  --border: hsl(210, 70%, 65%);
-  --text: hsl(210, 70%, 20%);
+  --background: hsl(210, 70%, 65%);
+  --subcontainer: hsl(210, 70%, 70%);
+  --primary: hsl(210, 70%, 75%);
+  --border: hsl(210, 70%, 80%);
+  --text: hsl(210, 70%, 30%);
 }
 
 [data-theme=dark-blue] {
@@ -96,11 +96,11 @@
 }
 
 [data-theme=light-purple] {
-  --background: hsl(270, 60%, 80%);
-  --subcontainer: hsl(270, 60%, 75%);
-  --primary: hsl(270, 60%, 70%);
-  --border: hsl(270, 60%, 65%);
-  --text: hsl(270, 60%, 20%);
+  --background: hsl(270, 60%, 65%);
+  --subcontainer: hsl(270, 60%, 70%);
+  --primary: hsl(270, 60%, 75%);
+  --border: hsl(270, 60%, 80%);
+  --text: hsl(270, 60%, 30%);
 }
 
 [data-theme=dark-purple] {
@@ -112,11 +112,11 @@
 }
 
 [data-theme=light-pink] {
-  --background: hsl(330, 70%, 80%);
-  --subcontainer: hsl(330, 70%, 75%);
-  --primary: hsl(330, 70%, 70%);
-  --border: hsl(330, 70%, 65%);
-  --text: hsl(330, 70%, 20%);
+  --background: hsl(330, 70%, 65%);
+  --subcontainer: hsl(330, 70%, 70%);
+  --primary: hsl(330, 70%, 75%);
+  --border: hsl(330, 70%, 80%);
+  --text: hsl(330, 70%, 30%);
 }
 
 [data-theme=dark-pink] {
@@ -143,6 +143,17 @@
 
 * {
   cursor: url("/projects/personal-interface-remake/assets/cursor-default.cur"), auto !important;
+}
+
+[data-theme] * {
+  transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+[data-theme] *::-moz-placeholder {
+  -moz-transition: color 0.2s ease;
+  transition: color 0.2s ease;
+}
+[data-theme] *::placeholder {
+  transition: color 0.2s ease;
 }
 
 body {
@@ -221,59 +232,35 @@ body img {
   border: 2px solid var(--border);
   background: var(--subcontainer);
 }
-.container .theme-switch {
-  position: fixed;
-  right: 0.5rem;
-  top: 0.5rem;
-  font-size: 1.5rem;
-  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
-  z-index: 99;
-  -webkit-tap-highlight-color: transparent;
-  width: 2.7rem;
-  aspect-ratio: 1;
-  background: var(--subcontainer);
+
+.date {
+  grid-area: 1/1/1/1;
+  height: 2.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  font-style: italic;
+}
+.date span {
+  padding-inline: 1rem;
+  white-space: nowrap;
+}
+
+.clock {
+  grid-area: 2/1/2/1;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
 }
-.container .theme-switch i {
-  pointer-events: none;
+.clock span {
+  font-size: clamp(3rem, 1.615rem + 1.538vw, 4rem);
+  letter-spacing: 5px;
+  font-weight: 700;
 }
-.container .theme-picker {
-  grid-area: 1/4/1/4;
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  flex-direction: row;
-  padding: 0.5rem;
-}
-@media (max-width: 769px) {
-  .container .theme-picker {
-    grid-area: 5/2/5/2;
-  }
-}
-@media (max-width: 426px) {
-  .container .theme-picker {
-    grid-area: 8/1/9/1;
-    -webkit-tap-highlight-color: transparent;
-  }
-}
-.container .theme-picker > * {
-  -webkit-appearance: none;
-     -moz-appearance: none;
-          appearance: none;
-  width: 1.5rem;
-  aspect-ratio: 1;
-  border-radius: 50%;
-  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
-  border: 1px solid rgba(249.9, 249.9, 249.9, 0.5);
-}
-.container .theme-picker > *:checked {
-  transform: scale(1.15);
-}
-.container .timer {
+
+.timer {
   grid-area: 3/1/3/1;
   display: flex;
   justify-content: center;
@@ -282,7 +269,7 @@ body img {
   gap: 1rem;
   padding: 1rem;
 }
-.container .timer .time {
+.timer .time {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -291,12 +278,12 @@ body img {
   font-size: 2rem;
   font-weight: 700;
 }
-.container .timer .time .hours,
-.container .timer .time .minutes,
-.container .timer .time .seconds {
+.timer .time .hours,
+.timer .time .minutes,
+.timer .time .seconds {
   cursor: url("/projects/personal-interface-remake/assets/cursor-text.cur"), text !important;
 }
-.container .timer .time .tempInput {
+.timer .time .tempInput {
   font-size: 2rem;
   font-weight: 700;
   background: none;
@@ -310,12 +297,12 @@ body img {
   -webkit-appearance: textfield;
           appearance: textfield;
 }
-.container .timer .time .tempInput::-webkit-outer-spin-button, .container .timer .time .tempInput::-webkit-inner-spin-button {
+.timer .time .tempInput::-webkit-outer-spin-button, .timer .time .tempInput::-webkit-inner-spin-button {
   -webkit-appearance: none;
   appearance: none;
   margin: 0;
 }
-.container .timer .btns {
+.timer .btns {
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -324,7 +311,7 @@ body img {
   width: 100%;
   -webkit-tap-highlight-color: transparent;
 }
-.container .timer .btns .button {
+.timer .btns .button {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -340,227 +327,65 @@ body img {
           user-select: none;
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
 }
-.container .timer .btns .button > * {
+.timer .btns .button > * {
   pointer-events: none;
 }
-.container .timer .btns .button.start-stop {
+.timer .btns .button.start-stop {
   background: var(--background);
 }
-.container .timer .btns .button i {
+.timer .btns .button i {
   font-size: 0.8rem;
 }
-.container .date {
-  grid-area: 1/1/1/1;
-  height: 2.7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  font-style: italic;
-}
-.container .date span {
-  padding-inline: 1rem;
-  white-space: nowrap;
-}
-.container .clock {
-  grid-area: 2/1/2/1;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-}
-.container .clock span {
-  font-size: clamp(3rem, 1.615rem + 1.538vw, 4rem);
-  letter-spacing: 5px;
-  font-weight: 700;
-}
-.container .weather {
-  grid-area: 1/3/6/4;
-  padding: 1rem;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-  gap: 1rem;
-}
-@media (max-width: 769px) {
-  .container .weather {
-    grid-area: 5/1/8/1;
-  }
-}
-@media (max-width: 426px) {
-  .container .weather {
-    grid-area: 7/1/8/1;
-  }
-}
-.container .weather .search {
-  position: relative;
-  width: -moz-fit-content;
-  width: fit-content;
-}
-.container .weather .search .searchbar {
-  border-radius: 1rem;
-  background: var(--background);
-  border: 1px solid var(--border);
-  padding: 0.4rem 1.7rem 0.4rem 0.6rem;
-  font-family: "Inter", sans-serif;
-  outline: none;
-  color: var(--text);
-  cursor: url("/projects/personal-interface-remake/assets/cursor-text.cur"), text !important;
-  text-transform: capitalize;
-}
-.container .weather .search .searchbar::-ms-reveal, .container .weather .search .searchbar::-ms-clear {
-  display: none;
-  width: 0;
-  height: 0;
-}
-.container .weather .search .searchbar::-webkit-search-decoration, .container .weather .search .searchbar::-webkit-search-cancel-button, .container .weather .search .searchbar::-webkit-search-results-button, .container .weather .search .searchbar::-webkit-search-results-decoration {
-  display: none;
-}
-.container .weather .search .searchbar::-moz-placeholder {
-  color: var(--border);
-}
-.container .weather .search .searchbar::placeholder {
-  color: var(--border);
-}
-.container .weather .search i {
-  position: absolute;
-  right: 0.6rem;
-  top: 50%;
-  transform: translateY(-50%);
-  font-size: 0.8rem;
-  color: var(--border);
-}
-.container .weather .search i.fa-magnifying-glass {
-  pointer-events: none;
-}
-.container .weather .search i.fa-xmark {
-  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
-  -webkit-tap-highlight-color: transparent;
-}
-.container .weather .main-weather {
-  width: 100%;
-  flex: 1;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-  gap: 1rem;
-}
-.container .weather .main-weather > * {
-  padding: 1rem;
-  border-radius: calc(23px - 1rem);
-  width: 100%;
-  background: var(--primary);
-  border: 1px solid var(--border);
-}
-.container .weather .main-weather .forecast {
-  gap: 0.7rem;
-  flex: 1;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-}
-.container .weather .main-weather .forecast .forecast-span {
-  font-weight: 600;
-  color: var(--text);
-}
-.container .weather .main-weather .forecast .forecast-days {
-  flex: 1;
-  width: 100%;
-  display: flex;
-  justify-content: start;
-  align-items: center;
-  flex-direction: row;
-  border-radius: calc(23px - 1rem);
-  overflow: hidden;
-}
-.container .weather .main-weather .forecast .forecast-days .forecast-day {
-  height: 100%;
-  flex: 1;
+
+.streak {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  grid-area: 4/1/6/1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding-block: 0.5rem;
+  padding: 1rem;
+  color: var(--text);
 }
-.container .weather .main-weather .forecast .forecast-days .forecast-day .icon-forecast {
-  font-size: 1.3rem;
-}
-@media (max-width: 769px) {
-  .container .weather .main-weather .forecast .forecast-days .forecast-day .icon-forecast {
-    font-size: 1rem;
-  }
-}
-.container .weather .main-weather .forecast .forecast-days .forecast-day .temperature-forecast {
-  font-weight: 600;
-}
-@media (max-width: 769px) {
-  .container .weather .main-weather .forecast .forecast-days .forecast-day .temperature-forecast {
-    font-weight: 400;
-  }
-}
-.container .weather .main-weather .forecast .forecast-days .forecast-day .day-forecast {
-  opacity: 0.8;
+.streak span:not(.streak-num) {
   font-size: 0.9rem;
   font-weight: 300;
 }
-.container .weather .main-weather .forecast .forecast-days .forecast-day .wrapper {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 0.3rem;
+.streak .streak-num {
+  font-size: 4rem;
+  font-weight: bold;
 }
-.container .weather .main-weather .current-weather {
-  flex: 2;
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
+@media (max-width: 769px) {
+  .streak {
+    grid-area: 4/1/4/1;
+  }
 }
-.container .weather .main-weather .current-weather .city {
-  position: absolute;
-  left: 1rem;
-  top: 1rem;
-  color: var(--text);
-  font-weight: 600;
+@media (max-width: 426px) {
+  .streak {
+    grid-area: 4/1/5/1;
+  }
 }
-.container .weather .main-weather .current-weather .weather-now {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  gap: 1rem;
-  color: var(--text);
-}
-.container .weather .main-weather .current-weather .weather-now .weather-now-icon {
-  font-size: 3.5rem;
-}
-.container .weather .main-weather .current-weather .weather-now .temperature {
-  font-size: 2rem;
-  font-weight: 600;
-}
-.container .notes {
+
+.notes {
   grid-area: 1/2/4/2;
   overflow: hidden;
   border-color: var(--text);
   min-width: 15rem;
 }
 @media (max-width: 426px) {
-  .container .notes {
+  .notes {
     grid-area: 5/1/6/1;
   }
 }
-.container .notes.saved {
+.notes.saved {
   border-color: var(--border);
 }
-.container .notes.unsaved {
+.notes.unsaved {
   border-color: var(--text);
 }
-.container .notes textarea {
+.notes textarea {
   background: none;
   border: none;
   outline: none;
@@ -574,150 +399,31 @@ body img {
   cursor: url("/projects/personal-interface-remake/assets/cursor-text.cur"), text !important;
   caret-color: var(--text);
 }
-.container .notes textarea::-moz-placeholder {
+.notes textarea::-moz-placeholder {
   color: var(--border);
 }
-.container .notes textarea::placeholder {
+.notes textarea::placeholder {
   color: var(--border);
 }
-.container .notes textarea::-webkit-scrollbar {
+.notes textarea::-webkit-scrollbar {
   width: 12px;
 }
-.container .notes textarea::-webkit-scrollbar-thumb {
+.notes textarea::-webkit-scrollbar-thumb {
   background: var(--border);
   border: 3.5px solid var(--background);
   border-radius: 0.5rem;
   cursor: url("/projects/personal-interface-remake/assets/cursor-scroll.cur"), grab !important;
 }
-.container .notes textarea::-webkit-scrollbar-track {
+.notes textarea::-webkit-scrollbar-track {
   background: var(--background);
 }
-.container .notes textarea::-webkit-scrollbar-button {
+.notes textarea::-webkit-scrollbar-button {
   background: transparent;
   height: 0;
   width: 0;
 }
-.container .calculator {
-  grid-area: 2/4/5/4;
-  display: flex;
-  justify-content: start;
-  align-items: start;
-  flex-direction: column;
-  gap: 1rem;
-  padding: 1rem;
-  width: 275px;
-}
-@media (max-width: 769px) {
-  .container .calculator {
-    grid-area: 6/2/6/2;
-    max-width: 312px;
-    width: 100%;
-  }
-}
-@media (max-width: 426px) {
-  .container .calculator {
-    grid-area: 9/1/10/1;
-    max-width: 340px;
-    width: 100%;
-  }
-}
-.container .calculator .result-display {
-  background: var(--background);
-  padding: 1rem;
-  border-radius: calc(23px - 1rem) calc(23px - 1rem) 0 0;
-  text-align: right;
-  font-size: 1.2rem;
-  font-weight: 600;
-  font-family: "Orbitron", sans-serif;
-  width: 100%;
-  color: var(--text);
-  overflow-y: hidden;
-  overflow-x: auto;
-  white-space: nowrap;
-}
-.container .calculator .result-display::-webkit-scrollbar {
-  height: 6px;
-}
-.container .calculator .result-display::-webkit-scrollbar-thumb {
-  background: var(--border);
-  border: 2px solid var(--background);
-  border-radius: 0.5rem;
-  cursor: url("/projects/personal-interface-remake/assets/cursor-scroll-horizonal.cur"), grab !important;
-}
-.container .calculator .result-display::-webkit-scrollbar-track {
-  background: var(--background);
-}
-.container .calculator .result-display::-webkit-scrollbar-button {
-  background: transparent;
-  height: 0;
-  width: 0;
-}
-.container .calculator .buttons-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-areas: repeat(5, 1fr);
-  gap: 0.2rem;
-  height: 100%;
-  width: 100%;
-}
-.container .calculator .buttons-grid > * {
-  border-radius: calc(23px - 1rem);
-  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  font-weight: 600;
-  font-size: 1.2rem;
-  color: var(--text);
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  -webkit-tap-highlight-color: transparent;
-}
-.container .calculator .buttons-grid > *:active {
-  transform: scale(0.95);
-  transition: 0.05s ease;
-}
-.container .calculator .buttons-grid > * > * {
-  pointer-events: none;
-}
-.container .calculator .buttons-grid .dark {
-  background: var(--background);
-}
-.container .calculator .buttons-grid .mid-light {
-  background: var(--primary);
-}
-.container .calculator .buttons-grid .light {
-  background: var(--border);
-}
-.container .copyright {
-  grid-area: 5/4/5/4;
-  height: 2.7rem;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: row;
-  color: var(--text);
-  font-size: 0.85rem;
-  font-weight: 300;
-}
-.container .copyright span,
-.container .copyright a {
-  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
-  animation: bounceText 1s ease-in-out infinite;
-}
-@media (max-width: 769px) {
-  .container .copyright {
-    grid-area: 7/2/7/2;
-  }
-}
-@media (max-width: 426px) {
-  .container .copyright {
-    grid-area: 10/1/11/1;
-  }
-}
-.container .week {
+
+.week {
   grid-area: 4/2/6/2;
   padding: 1rem;
   display: flex;
@@ -727,37 +433,37 @@ body img {
   gap: 0.7rem;
 }
 @media (max-width: 769px) {
-  .container .week {
+  .week {
     grid-area: 4/2/4/2;
   }
 }
 @media (max-width: 426px) {
-  .container .week {
+  .week {
     grid-area: 6/1/7/1;
   }
 }
-.container .week .top-wrapper {
+.week .top-wrapper {
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: row;
   width: 100%;
 }
-.container .week .top-wrapper .current-week {
+.week .top-wrapper .current-week {
   font-weight: 600;
 }
-.container .week .top-wrapper .icon-wrapper {
+.week .top-wrapper .icon-wrapper {
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: row;
   gap: 1rem;
 }
-.container .week .top-wrapper .icon-wrapper i {
+.week .top-wrapper .icon-wrapper i {
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
   -webkit-tap-highlight-color: transparent;
 }
-.container .week .day-display {
+.week .day-display {
   width: 100%;
   flex: 1;
   background: var(--subcontainer);
@@ -770,7 +476,7 @@ body img {
   overflow: hidden;
   gap: 0.05rem;
 }
-.container .week .day-display .day {
+.week .day-display .day {
   flex: 1;
   height: 100%;
   border-top: 10px solid var(--border);
@@ -785,56 +491,372 @@ body img {
           user-select: none;
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
 }
-.container .week .day-display .day.active-day {
+.week .day-display .day.active-day {
   background: var(--border);
 }
-.container .week .day-display .day.active-day .weekdate {
+.week .day-display .day.active-day .weekdate {
   font-size: 1.2rem;
   font-weight: 700;
 }
-.container .week .day-display .day.active-day .weekday {
+.week .day-display .day.active-day .weekday {
   opacity: 1;
   font-size: 0.9rem;
   font-weight: 500;
 }
-.container .week .day-display .day .weekdate {
+.week .day-display .day .weekdate {
   font-size: 1.05rem;
   font-weight: 600;
   pointer-events: none;
 }
-.container .week .day-display .day .weekday {
+.week .day-display .day .weekday {
   opacity: 0.8;
   font-size: 0.9rem;
   font-weight: 300;
   pointer-events: none;
 }
-.container .streak {
-  -webkit-user-select: none;
-     -moz-user-select: none;
-          user-select: none;
-  grid-area: 4/1/6/1;
+
+.weather {
+  grid-area: 1/3/6/4;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+}
+@media (max-width: 769px) {
+  .weather {
+    grid-area: 5/1/8/1;
+  }
+}
+@media (max-width: 426px) {
+  .weather {
+    grid-area: 7/1/8/1;
+  }
+}
+.weather .search {
+  position: relative;
+  width: -moz-fit-content;
+  width: fit-content;
+}
+.weather .search .searchbar {
+  border-radius: 1rem;
+  background: var(--background);
+  border: 1px solid var(--border);
+  padding: 0.4rem 1.7rem 0.4rem 0.6rem;
+  font-family: "Inter", sans-serif;
+  outline: none;
+  color: var(--text);
+  cursor: url("/projects/personal-interface-remake/assets/cursor-text.cur"), text !important;
+  text-transform: capitalize;
+}
+.weather .search .searchbar::-ms-reveal, .weather .search .searchbar::-ms-clear {
+  display: none;
+  width: 0;
+  height: 0;
+}
+.weather .search .searchbar::-webkit-search-decoration, .weather .search .searchbar::-webkit-search-cancel-button, .weather .search .searchbar::-webkit-search-results-button, .weather .search .searchbar::-webkit-search-results-decoration {
+  display: none;
+}
+.weather .search .searchbar::-moz-placeholder {
+  color: var(--border);
+}
+.weather .search .searchbar::placeholder {
+  color: var(--border);
+}
+.weather .search i {
+  position: absolute;
+  right: 0.6rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.8rem;
+  color: var(--border);
+}
+.weather .search i.fa-magnifying-glass {
+  pointer-events: none;
+}
+.weather .search i.fa-xmark {
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  -webkit-tap-highlight-color: transparent;
+}
+.weather .main-weather {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+}
+.weather .main-weather > * {
+  padding: 1rem;
+  border-radius: calc(23px - 1rem);
+  width: 100%;
+  background: var(--primary);
+  border: 1px solid var(--border);
+}
+.weather .main-weather .forecast {
+  gap: 0.7rem;
+  flex: 1;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+}
+.weather .main-weather .forecast .forecast-span {
+  font-weight: 600;
+  color: var(--text);
+}
+.weather .main-weather .forecast .forecast-days {
+  flex: 1;
+  width: 100%;
+  display: flex;
+  justify-content: start;
+  align-items: center;
+  flex-direction: row;
+  border-radius: calc(23px - 1rem);
+  overflow: hidden;
+}
+.weather .main-weather .forecast .forecast-days .forecast-day {
+  height: 100%;
+  flex: 1;
   display: flex;
   justify-content: space-between;
   align-items: center;
   flex-direction: column;
-  padding: 1rem;
-  color: var(--text);
+  padding-block: 0.5rem;
 }
-.container .streak span:not(.streak-num) {
+.weather .main-weather .forecast .forecast-days .forecast-day .icon-forecast {
+  font-size: 1.3rem;
+}
+@media (max-width: 769px) {
+  .weather .main-weather .forecast .forecast-days .forecast-day .icon-forecast {
+    font-size: 1rem;
+  }
+}
+.weather .main-weather .forecast .forecast-days .forecast-day .temperature-forecast {
+  font-weight: 600;
+}
+@media (max-width: 769px) {
+  .weather .main-weather .forecast .forecast-days .forecast-day .temperature-forecast {
+    font-weight: 400;
+  }
+}
+.weather .main-weather .forecast .forecast-days .forecast-day .day-forecast {
+  opacity: 0.8;
   font-size: 0.9rem;
   font-weight: 300;
 }
-.container .streak .streak-num {
-  font-size: 4rem;
-  font-weight: bold;
+.weather .main-weather .forecast .forecast-days .forecast-day .wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+.weather .main-weather .current-weather {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  flex: 2;
+}
+.weather .main-weather .current-weather .city {
+  position: absolute;
+  left: 1rem;
+  top: 1rem;
+  color: var(--text);
+  font-weight: 600;
+}
+.weather .main-weather .current-weather .weather-now {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  gap: 1rem;
+  color: var(--text);
+}
+.weather .main-weather .current-weather .weather-now .weather-now-icon {
+  font-size: 3.5rem;
+}
+.weather .main-weather .current-weather .weather-now .temperature {
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.theme-picker {
+  grid-area: 1/4/1/4;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+  width: 100%;
+  padding: 0.5rem;
 }
 @media (max-width: 769px) {
-  .container .streak {
-    grid-area: 4/1/4/1;
+  .theme-picker {
+    grid-area: 5/2/5/2;
   }
 }
 @media (max-width: 426px) {
-  .container .streak {
-    grid-area: 4/1/5/1;
+  .theme-picker {
+    grid-area: 8/1/9/1;
+    -webkit-tap-highlight-color: transparent;
   }
+}
+.theme-picker > * {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  border: 1px solid rgba(249.9, 249.9, 249.9, 0.5);
+}
+.theme-picker > *:checked {
+  transform: scale(1.15);
+}
+
+.calculator {
+  grid-area: 2/4/5/4;
+  display: flex;
+  justify-content: start;
+  align-items: start;
+  flex-direction: column;
+  gap: 1rem;
+  padding: 1rem;
+  width: 275px;
+}
+@media (max-width: 769px) {
+  .calculator {
+    grid-area: 6/2/6/2;
+    max-width: 312px;
+    width: 100%;
+  }
+}
+@media (max-width: 426px) {
+  .calculator {
+    grid-area: 9/1/10/1;
+    max-width: 340px;
+    width: 100%;
+  }
+}
+.calculator .result-display {
+  background: var(--background);
+  padding: 1rem;
+  border-radius: calc(23px - 1rem) calc(23px - 1rem) 0 0;
+  text-align: right;
+  font-size: 1.2rem;
+  font-weight: 600;
+  font-family: "Orbitron", sans-serif;
+  width: 100%;
+  color: var(--text);
+  overflow-y: hidden;
+  overflow-x: auto;
+  white-space: nowrap;
+}
+.calculator .result-display::-webkit-scrollbar {
+  height: 6px;
+}
+.calculator .result-display::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border: 2px solid var(--background);
+  border-radius: 0.5rem;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-scroll-horizonal.cur"), grab !important;
+}
+.calculator .result-display::-webkit-scrollbar-track {
+  background: var(--background);
+}
+.calculator .result-display::-webkit-scrollbar-button {
+  background: transparent;
+  height: 0;
+  width: 0;
+}
+.calculator .buttons-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-areas: repeat(5, 1fr);
+  gap: 0.2rem;
+  height: 100%;
+  width: 100%;
+}
+.calculator .buttons-grid > * {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  border-radius: calc(23px - 1rem);
+  font-weight: 600;
+  font-size: 1.2rem;
+  color: var(--text);
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  -webkit-tap-highlight-color: transparent;
+}
+.calculator .buttons-grid > *:active {
+  transform: scale(0.95);
+  transition: 0.05s ease;
+}
+.calculator .buttons-grid > * > * {
+  pointer-events: none;
+}
+.calculator .buttons-grid .dark {
+  background: var(--background);
+}
+.calculator .buttons-grid .mid-light {
+  background: var(--primary);
+}
+.calculator .buttons-grid .light {
+  background: var(--border);
+}
+
+.link {
+  grid-area: 5/4/5/4;
+  height: 2.7rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+  color: var(--text);
+  font-size: 0.85rem;
+  font-weight: 300;
+}
+.link span,
+.link a {
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  animation: bounceText 1s ease-in-out infinite;
+}
+@media (max-width: 769px) {
+  .link {
+    grid-area: 7/2/7/2;
+  }
+}
+@media (max-width: 426px) {
+  .link {
+    grid-area: 10/1/11/1;
+  }
+}
+
+.theme-switch {
+  position: fixed;
+  right: 0.5rem;
+  top: 0.5rem;
+  font-size: 1.5rem;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  z-index: 99;
+  -webkit-tap-highlight-color: transparent;
+  width: 2.7rem;
+  aspect-ratio: 1;
+  background: var(--subcontainer);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: row;
+}
+.theme-switch i {
+  pointer-events: none;
 }/*# sourceMappingURL=main.css.map */

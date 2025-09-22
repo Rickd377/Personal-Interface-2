@@ -1,0 +1,17 @@
+.theme-switch {
+  position: fixed;
+  right: .5rem;
+  top: .5rem;
+  font-size: 1.5rem;
+  cursor: $pointercursor;
+  z-index: 99;
+  -webkit-tap-highlight-color: transparent;
+  width: 2.7rem;
+  aspect-ratio: 1;
+  background: var(--subcontainer);
+  @include flex;
+
+  i {
+    pointer-events: none;
+  }
+}

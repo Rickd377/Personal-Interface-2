@@ -1,0 +1,28 @@
+.theme-picker {
+  grid-area: 1 / 4 / 1 / 4;
+  @include flex(space-between);
+  width: 100%;
+  padding: .5rem;
+
+  @include responsive("tablet") {
+    grid-area: 5 / 2 / 5 / 2;
+  }
+
+  @include responsive("mobile") {
+    grid-area: 8 / 1 / 9 / 1;
+    -webkit-tap-highlight-color: transparent;
+  }
+
+  & > * {
+    appearance: none;
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    cursor: $pointercursor;
+    border: 1px solid rgba($white, .5);
+
+    &:checked {
+      transform: scale(1.15);
+    }
+  }
+}

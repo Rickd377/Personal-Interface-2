@@ -1,4 +1,4 @@
-document.querySelector('.copyright span').addEventListener('copy', function(e) {
+document.querySelector('.link span').addEventListener('copy', function(e) {
   e.preventDefault();
   const link = this.querySelector('a').href;
   if (e.clipboardData) {

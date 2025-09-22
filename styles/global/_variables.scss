@@ -15,18 +15,18 @@ $themes: (
     text: hsl(0, 0%, 90%),
   ),
   white: (
-    background: hsl(0, 0%, 85%),
-    subcontainer: hsl(0, 0%, 80%),
-    primary: hsl(0, 0%, 75%),
-    border: hsl(0, 0%, 70%),
-    text: hsl(0, 0%, 10%),
+    background: hsl(0, 0%, 70%),
+    subcontainer: hsl(0, 0%, 75%),
+    primary: hsl(0, 0%, 80%),
+    border: hsl(0, 0%, 85%),
+    text: hsl(0, 0%, 20%),
   ),
   light-brown: (
-    background: hsl(30, 40%, 85%),
-    subcontainer: hsl(30, 40%, 80%),
-    primary: hsl(30, 40%, 75%),
-    border: hsl(30, 40%, 70%),
-    text: hsl(30, 40%, 20%),
+    background: hsl(30, 40%, 70%),
+    subcontainer: hsl(30, 40%, 75%),
+    primary: hsl(30, 40%, 80%),
+    border: hsl(30, 40%, 85%),
+    text: hsl(30, 40%, 30%),
   ),
   dark-brown: (
     background: hsl(30, 40%, 20%),
@@ -36,11 +36,11 @@ $themes: (
     text: hsl(30, 40%, 85%),
   ),
   light-red: (
-    background: hsl(0, 70%, 80%),
-    subcontainer: hsl(0, 70%, 75%),
-    primary: hsl(0, 70%, 70%),
-    border: hsl(0, 70%, 65%),
-    text: hsl(0, 70%, 20%),
+    background: hsl(0, 70%, 65%),
+    subcontainer: hsl(0, 70%, 70%),
+    primary: hsl(0, 70%, 75%),
+    border: hsl(0, 70%, 80%),
+    text: hsl(0, 70%, 30%),
   ),
   dark-red: (
     background: hsl(0, 70%, 20%),
@@ -50,11 +50,11 @@ $themes: (
     text: hsl(0, 70%, 85%),
   ),
   light-orange: (
-    background: hsl(30, 80%, 80%),
-    subcontainer: hsl(30, 80%, 75%),
-    primary: hsl(30, 80%, 70%),
-    border: hsl(30, 80%, 65%),
-    text: hsl(30, 80%, 20%),
+    background: hsl(30, 80%, 65%),
+    subcontainer: hsl(30, 80%, 70%),
+    primary: hsl(30, 80%, 75%),
+    border: hsl(30, 80%, 80%),
+    text: hsl(30, 80%, 30%),
   ),
   dark-orange: (
     background: hsl(30, 80%, 20%),
@@ -64,11 +64,11 @@ $themes: (
     text: hsl(30, 80%, 85%),
   ),
   light-green: (
-    background: hsl(140, 60%, 80%),
-    subcontainer: hsl(140, 60%, 70%),
-    primary: hsl(140, 60%, 60%),
-    border: hsl(140, 60%, 50%),
-    text: hsl(140, 60%, 20%),
+    background: hsl(140, 60%, 50%),
+    subcontainer: hsl(140, 60%, 60%),
+    primary: hsl(140, 60%, 70%),
+    border: hsl(140, 60%, 80%),
+    text: hsl(140, 60%, 30%),
   ),
   dark-green: (
     background: hsl(140, 60%, 20%),
@@ -78,11 +78,11 @@ $themes: (
     text: hsl(140, 60%, 85%),
   ),
   light-blue: (
-    background: hsl(210, 70%, 80%),
-    subcontainer: hsl(210, 70%, 75%),
-    primary: hsl(210, 70%, 70%),
-    border: hsl(210, 70%, 65%),
-    text: hsl(210, 70%, 20%),
+    background: hsl(210, 70%, 65%),
+    subcontainer: hsl(210, 70%, 70%),
+    primary: hsl(210, 70%, 75%),
+    border: hsl(210, 70%, 80%),
+    text: hsl(210, 70%, 30%),
   ),
   dark-blue: (
     background: hsl(210, 70%, 20%),
@@ -92,11 +92,11 @@ $themes: (
     text: hsl(210, 70%, 85%),
   ),
   light-purple: (
-    background: hsl(270, 60%, 80%),
-    subcontainer: hsl(270, 60%, 75%),
-    primary: hsl(270, 60%, 70%),
-    border: hsl(270, 60%, 65%),
-    text: hsl(270, 60%, 20%),
+    background: hsl(270, 60%, 65%),
+    subcontainer: hsl(270, 60%, 70%),
+    primary: hsl(270, 60%, 75%),
+    border: hsl(270, 60%, 80%),
+    text: hsl(270, 60%, 30%),
   ),
   dark-purple: (
     background: hsl(270, 60%, 20%),
@@ -106,11 +106,11 @@ $themes: (
     text: hsl(270, 60%, 85%),
   ),
   light-pink: (
-    background: hsl(330, 70%, 80%),
-    subcontainer: hsl(330, 70%, 75%),
-    primary: hsl(330, 70%, 70%),
-    border: hsl(330, 70%, 65%),
-    text: hsl(330, 70%, 20%),
+    background: hsl(330, 70%, 65%),
+    subcontainer: hsl(330, 70%, 70%),
+    primary: hsl(330, 70%, 75%),
+    border: hsl(330, 70%, 80%),
+    text: hsl(330, 70%, 30%),
   ),
   dark-pink: (
     background: hsl(330, 70%, 20%),
@@ -150,3 +150,9 @@ $pointercursor: url('/projects/personal-interface-remake/assets/cursor-pointer.c
 $textcursor: url('/projects/personal-interface-remake/assets/cursor-text.cur'), text !important;
 $scrollverticalcursor: url('/projects/personal-interface-remake/assets/cursor-scroll.cur'), grab !important;
 $scrollhorizonalcursor: url('/projects/personal-interface-remake/assets/cursor-scroll-horizonal.cur'), grab !important;
+
+$inner-radius: 23px;
+$padding: 1rem;
+
+$parent-radius: $inner-radius;
+$parent-padding: $padding;

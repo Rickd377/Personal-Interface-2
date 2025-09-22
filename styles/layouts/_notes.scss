@@ -1,0 +1,58 @@
+.notes {
+  grid-area: 1 / 2 / 4 / 2;
+  overflow: hidden;
+  border-color: var(--text);
+  min-width: 15rem;
+
+  @include responsive("mobile") {
+    grid-area: 5 / 1 / 6 / 1;
+  }
+
+  &.saved {
+    border-color: var(--border);
+  }
+
+  &.unsaved {
+    border-color: var(--text);
+  }
+
+  textarea {
+    background: none;
+    border: none;
+    outline: none;
+    height: 100%;
+    width: 100%;
+    resize: none;
+    color: var(--text);
+    font-family: $inter;
+    font-size: 1rem;
+    padding: 1rem;
+    cursor: $textcursor;
+    caret-color: var(--text);
+
+    &::placeholder {
+      color: var(--border);
+    }
+    
+    &::-webkit-scrollbar {
+      width: 12px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: var(--border);
+      border: 3.5px solid var(--background);
+      border-radius: .5rem;
+      cursor: $scrollverticalcursor;
+    }
+
+    &::-webkit-scrollbar-track {
+      background: var(--background);
+    }
+
+    &::-webkit-scrollbar-button {
+      background: transparent;
+      height: 0;
+      width: 0; 
+    }
+  }
+}

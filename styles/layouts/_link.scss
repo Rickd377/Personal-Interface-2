@@ -1,0 +1,22 @@
+.link {
+  grid-area: 5 / 4 / 5 / 4;
+  height: 2.7rem;
+  @include flex;
+  color: var(--text);
+  font-size: .85rem;
+  font-weight: 300;
+
+  span,
+  a {
+    cursor: $pointercursor;
+    animation: bounceText 1s ease-in-out infinite;
+  }
+
+  @include responsive("tablet") {
+    grid-area: 7 / 2 / 7 / 2;
+  }
+
+  @include responsive("mobile") {
+    grid-area: 10 / 1 / 11 / 1;
+  }
+}
