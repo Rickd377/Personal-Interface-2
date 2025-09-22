@@ -436,6 +436,7 @@ body img {
 }
 .container .weather .search i.fa-xmark {
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  -webkit-tap-highlight-color: transparent;
 }
 .container .weather .main-weather {
   width: 100%;
@@ -754,6 +755,7 @@ body img {
 }
 .container .week .top-wrapper .icon-wrapper i {
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
+  -webkit-tap-highlight-color: transparent;
 }
 .container .week .day-display {
   width: 100%;
@@ -781,6 +783,7 @@ body img {
   -webkit-user-select: none;
      -moz-user-select: none;
           user-select: none;
+  cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
 }
 .container .week .day-display .day.active-day {
   background: var(--border);
@@ -797,11 +800,13 @@ body img {
 .container .week .day-display .day .weekdate {
   font-size: 1.05rem;
   font-weight: 600;
+  pointer-events: none;
 }
 .container .week .day-display .day .weekday {
   opacity: 0.8;
   font-size: 0.9rem;
   font-weight: 300;
+  pointer-events: none;
 }
 .container .streak {
   -webkit-user-select: none;

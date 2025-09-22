@@ -239,6 +239,7 @@
 
         &.fa-xmark {
           cursor: $pointercursor;
+          -webkit-tap-highlight-color: transparent;
         }
       }
     }
@@ -548,6 +549,7 @@
         
         i {
           cursor: $pointercursor;
+          -webkit-tap-highlight-color: transparent;
         }
       }
     }
@@ -570,6 +572,7 @@
         background: var(--primary);
         padding-block: .5rem;
         user-select: none;
+        cursor: $pointercursor;
 
         &.active-day {
           background: var(--border);
@@ -589,12 +592,14 @@
         .weekdate {
           font-size: 1.05rem;
           font-weight: 600;
+          pointer-events: none;
         }
 
         .weekday {
           opacity: .8;
           font-size: .9rem;
           font-weight: 300;
+          pointer-events: none;
         }
       }
     }
