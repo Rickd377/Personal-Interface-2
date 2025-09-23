@@ -145,6 +145,10 @@
   cursor: url("/projects/personal-interface-remake/assets/cursor-default.cur"), auto !important;
 }
 
+html.no-transitions * {
+  transition: none !important;
+}
+
 [data-theme] * {
   transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
 }

@@ -103,17 +103,26 @@ document.addEventListener("DOMContentLoaded", function () {
   }
 
   function setTheme(theme, lightMode) {
+    const baseTheme = getBaseTheme(theme);
+
     let themeName;
-    if (theme === 'black' || theme === 'white') {
+    if (baseTheme === 'black' || baseTheme === 'white') {
       themeName = lightMode ? 'white' : 'black';
     } else {
-      themeName = lightMode ? `light-${theme}` : `dark-${theme}`;
+      themeName = lightMode ? `light-${baseTheme}` : `dark-${baseTheme}`;
     }
+
     html.dataset.theme = themeName;
     localStorage.setItem('theme', themeName);
+
     radios.forEach(radio => {
-      radio.checked = radio.value === theme;
+      if (baseTheme === 'black' || baseTheme === 'white') {
+        radio.checked = radio.value === 'black';
+      } else {
+        radio.checked = radio.value === baseTheme;
+      }
     });
+
     updateThemePickerRadios(lightMode);
     setTimeout(updateThemeColorMeta, 0);
   }
@@ -122,6 +131,10 @@ document.addEventListener("DOMContentLoaded", function () {
   let lightMode = isLight(current);
   updateThemePickerRadios(isLight(current));
   setTheme(basetTheme, lightMode);
+
+  setTimeout(() => {
+    html.classList.remove("no-transitions");
+  }, 100);
 
   const icon = document.querySelector(".theme-switch-icon");
   if (icon) {
@@ -147,7 +160,7 @@ document.addEventListener("DOMContentLoaded", function () {
         lightMode ? "fa-sun-bright" : "fa-moon"
       );
     }
-    setTheme(baseTheme, lightMode);
+    setTheme(nextTheme, lightMode);
     current = nextTheme;
   });
 

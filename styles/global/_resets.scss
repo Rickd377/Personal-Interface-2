@@ -8,6 +8,10 @@
   cursor: $defaultcursor;
 }
 
+html.no-transitions * {
+  transition: none !important;
+}
+
 [data-theme] * {
   transition: background-color .2s ease, color .2s ease, border-color .2s ease;
 
