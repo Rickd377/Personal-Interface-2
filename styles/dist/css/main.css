@@ -495,6 +495,9 @@ body img {
           user-select: none;
   cursor: url("/projects/personal-interface-remake/assets/cursor-pointer.cur"), pointer !important;
 }
+.week .day-display .day.editing-day {
+  border: 2px dashed black;
+}
 .week .day-display .day.active-day {
   background: var(--border);
 }
@@ -510,6 +513,13 @@ body img {
 .week .day-display .day .weekdate {
   font-size: 1.05rem;
   font-weight: 600;
+  pointer-events: none;
+}
+.week .day-display .day .day-dot {
+  aspect-ratio: 1;
+  width: 0.5rem;
+  border-radius: 50%;
+  background: var(--text);
   pointer-events: none;
 }
 .week .day-display .day .weekday {

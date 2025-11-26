@@ -51,6 +51,10 @@
       user-select: none;
       cursor: $pointercursor;
 
+      &.editing-day {
+        border: 2px dashed black;
+      }
+
       &.active-day {
         background: var(--border);
 
@@ -69,6 +73,14 @@
       .weekdate {
         font-size: 1.05rem;
         font-weight: 600;
+        pointer-events: none;
+      }
+
+      .day-dot {
+        aspect-ratio: 1;
+        width: .5rem;
+        border-radius: 50%;
+        background: var(--text);
         pointer-events: none;
       }
 
